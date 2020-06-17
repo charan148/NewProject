@@ -1,0 +1,97 @@
+
+<div class="row ml-0 mr-0">
+    <div class="col-12 pt-3">
+        <div class="col-8 float-left pl-0">
+            <button mat-mini-fab (click)="CreateNewTemplate()" title="Add New Template" aria-label="Add New Template"><i class="fa fa-plus"></i><span class="d-none">Add</span></button>
+            <button mat-mini-fab (click)="editTemplate()" aria-label="Edit New Template" title="Edit Template"><i class="fa fa-pencil-alt" title="Edit User"></i><span class="d-none">Edit</span></button>
+            <button mat-mini-fab (click)="viewTemplate()" aria-label="View Template" title="View Template"><i class="fa fa-eye" title="View Template"></i><span class="d-none">View</span></button>
+            <button mat-mini-fab (click)="deleteTemplate()" aria-label="Delete Template" title="Delete Template"><i class="fa fa-trash" title="Delete User"></i><span class="d-none">Delete</span></button>
+            <button mat-mini-fab (click)="refresh()" aria-label="Refresh" title="Refresh"><i class="fa fa-repeat" title="Refresh"></i><span class="d-none">Refresh</span></button>
+            
+        </div>
+        <mat-form-field class="col-4 float-left pr-0">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" aria-label="Filter" [(ngModel)]="filteruser" name="filteruser" value="filteruser">
+        </mat-form-field>
+        
+
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <!-- Checkbox Column -->
+            <ng-container matColumnDef="select">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef width="80px">
+                    <mat-checkbox (change)="$event ? masterToggle() : null" aria-label="Check Uncheck"
+                                  [checked]="selection.hasValue() && isAllSelected()"
+                                  [indeterminate]="selection.hasValue() && !isAllSelected()">
+
+                    </mat-checkbox>
+                </th>
+                <td tabindex="0" mat-cell *matCellDef="let row" class="mat-data">
+                    <mat-checkbox (click)="[$event.stopPropagation(), row.highlighted = !row.highlighted] "
+                                  (change)="$event ? selection.toggle(row) : null" aria-label="Check Uncheck"
+                                  [checked]="selection.isSelected(row)">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <!-- RequestName Column -->
+            <ng-container matColumnDef="requestName">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header> Request Name </th>
+                <td tabindex="0" mat-cell *matCellDef="let row"> {{row.requestName}} </td>
+            </ng-container>
+
+            <!--RequestDescription Column-->
+            <ng-container matColumnDef="requestDescription">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header> Request Description </th>
+                <td tabindex="0" mat-cell *matCellDef="let row"> {{row.requestDescription}} </td>
+            </ng-container>
+
+            <!--DisplayType Column-->
+
+            <ng-container matColumnDef="displayType">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header> Display Type </th>
+                <td tabindex="0" mat-cell *matCellDef="let row"> {{row.displayTypeText}} </td>
+            </ng-container>
+
+            <!--CreatedDate Column-->
+            <ng-container matColumnDef="createdDate">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header> Created Date </th>
+                <td tabindex="0" mat-cell *matCellDef="let row"> {{row.createdDate|date:'short'}} </td>
+            </ng-container>
+           
+
+            <!--visibility Column-->
+            <ng-container matColumnDef="visibility">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header>Visibility </th>
+                <td tabindex="0" mat-cell *matCellDef="let row"> {{row.visibilityText}} </td>
+            </ng-container>
+
+            <!--priority Column-->
+            <!--<ng-container matColumnDef="priority">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header> Priority </th>
+                <td tabindex="0" mat-cell *matCellDef="let row"> {{row.priority}} </td>
+            </ng-container>-->
+
+            <!--categoryText Column-->
+            <ng-container matColumnDef="categoryText">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header> Category </th>
+                <td tabindex="0" mat-cell *matCellDef="let row"> {{row.categoryText}} </td>
+            </ng-container>
+
+            <!--priorityText Column-->
+            <ng-container matColumnDef="priorityText">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header> Priority </th>
+                <td tabindex="0" mat-cell *matCellDef="let row"> {{row.priorityText}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{hovered: mat-row.hovered}"
+                (click)="[selection.toggle(row), row.highlighted = !row.highlighted] " (mouseover)="row.hovered = true" (mouseout)="row.hovered = false" [ngStyle]="{'background-color':selection.isSelected(row) ? '#ffead4' : 'white'}">
+            </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+
+    </div>
+
+</div>
+

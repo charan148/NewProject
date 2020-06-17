@@ -1,0 +1,105 @@
+<mat-toolbar class="p-0 mat-elevation-z1">
+    <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
+         <div fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
+            <div class="logo">
+                <img class="logo-icon" src="assets/images/logos/cityoforlando_large.png">
+            </div>
+        </div>
+
+         <div class="" fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
+
+
+
+             <button mat-button color="black"
+                     routerLink="/citizen/home">
+                 Home
+             </button>
+             <!--<button mat-button color="black"
+                     routerLink="/designer/designer">
+                 Designer
+             </button>-->
+
+             <button mat-button color="black" (click)="reqClick()" *ngIf="isAdminLogged">
+                 <!--*ngIf="isAdminLogged"-->
+                 My Request
+             </button>
+             <!--<button mat-button [matMenuTriggerFor]="dashBoard"
+                     class="user-button">
+                 <div fxLayout="row" fxLayoutAlign="center center">
+
+                     <span class="username mr-12" fxHide fxShow.gt-sm>Dashboard</span>
+                     <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
+                 </div>
+             </button>-->
+
+             <mat-menu #dashBoard="matMenu" [overlapTrigger]="false">
+
+                 <button mat-menu-item color="black"
+                         routerLink="/user/myreport">
+                     My Report
+
+                 </button>
+
+
+
+                 <button mat-menu-item color="black"
+                         routerLink="/user/analytics">
+                     Analytics
+                 </button>
+
+
+
+             </mat-menu>
+             <!--<button mat-button color="black"
+            routerLink="/pages/auth/register-2">
+        Sign Up
+    </button>-->
+             <button mat-button [matMenuTriggerFor]="userMenu"
+                     class="user-button" *ngIf="isLogin">
+                 <div fxLayout="row" fxLayoutAlign="center center">
+                     <img class="avatar mr-0 mr-sm-16" src="assets/images/avatars/cooSolid.png">
+                     <span class="username mr-12" fxHide fxShow.gt-sm>{{LoggedUserName}}</span>
+                     <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
+                 </div>
+             </button>
+
+             <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+
+                 <!--<button mat-menu-item>
+            <mat-icon>account_circle</mat-icon>
+            <span>My Profile</span>
+        </button>-->
+
+                 <button mat-menu-item class="" (click)="logout()" >
+                     <!--*ngIf="isAdminLogged"-->
+                     <mat-icon>exit_to_app</mat-icon>
+                     <span>Logout</span>
+                 </button>
+
+             </mat-menu>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         </div>
+
+    </div>
+
+</mat-toolbar>

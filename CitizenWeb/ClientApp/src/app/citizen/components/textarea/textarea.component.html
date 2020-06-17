@@ -1,0 +1,13 @@
+<div [formGroup]="form" *ngIf="chkpages=='details'">
+    <mat-form-field appearance="outline" fxFlex="100">
+        <mat-label>{{field.label}}</mat-label>
+        <textarea matInput rows="3" [name]="field.name" autocomplete="off" [formControlName]="field.name" (input)="field.input(form,field.name)"></textarea>
+    </mat-form-field>
+</div>
+
+<div [formGroup]="form" *ngIf="chkpages=='requestDetails'">
+    <mat-form-field appearance="outline" fxFlex="100">
+        <mat-label>{{field.label}}</mat-label>
+        <textarea matInput rows="3" [name]="field.name" autocomplete="off" [value]="field.value" [disabled]="true"></textarea>
+    </mat-form-field>
+</div>

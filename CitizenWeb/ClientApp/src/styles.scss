@@ -1,0 +1,367 @@
+// Import Fuse core library
+@import "@fuse/scss/core";
+
+// Import app.theme.scss
+@import "app/app.theme";
+
+.bg-none {
+    background: none !important;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.statuscircle {
+    width: 10px;
+    padding: 5px;
+    float: left;
+    margin-top: 2px;
+}
+
+.brdus_10 {
+    border-radius: 10px;
+}
+
+.w-75p {
+    width: 75%;
+    max-width: 75% !important;
+}
+
+.mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+    background-color: rgba(0, 0, 0, 0.54) !important;
+}
+
+.mat-step-header .mat-step-icon-selected {
+    background-color: #00529b !important;
+    color: #fff !important;
+}
+
+.mat-step-header .mat-step-label.mat-step-label-active {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.mat-step-header .mat-step-label.mat-step-label-selected {
+    color: #00529b !important;
+}
+
+.mat-form-field-wrapper {
+    padding-bottom: 15px !important;
+    margin-bottom: 0px !important;
+}
+.mat-dialog-container {
+    padding:10px !important;
+}
+
+body.theme-default .accent {
+    background-color: #00529b !important;
+}
+
+body.theme-default .mat-flat-button.mat-accent, body.theme-default .mat-raised-button.mat-accent, body.theme-default .mat-fab.mat-accent, body.theme-default .mat-mini-fab.mat-accent {
+    background-color: #00529b;
+}
+
+.cstmmap {
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+
+.border-bottom1 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.border-1 {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+.pb-10 {
+    padding-bottom: 10px;
+}
+
+.pl-10 {
+    padding-left: 10px;
+}
+
+.pr-10 {
+    padding-right: 10px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.pt-10 {
+    padding-top: 10px;
+}
+
+.radius_label_info {
+    padding: 5px 12px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #bcdfff;
+    color: #000;
+}
+
+.mat-horizontal-stepper-header-container {
+    background: #ddd !important;
+}
+
+.mat-horizontal-stepper-header {
+    height: 60px !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.mat-header-cell {
+    font-size: 14px;
+}
+
+.mat-form-field-wrapper {
+    padding-bottom: 15px !important;
+}
+
+body.theme-default {
+    background: #e0e0e0 !important;
+}
+
+
+.flex-img {
+    display: flex;
+    align-items: stretch;
+}
+
+.flex-img > div {
+    width: calc(33% - 20px);
+    margin: 10px;
+    text-align: center;
+}
+
+.flex-img > div img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: 250px;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.clobtn {
+    position: absolute !important;
+    right: 5px;
+    top: 5px;
+    background: rgba(0,0,0,0.5) !important;
+    min-width: unset !important;
+    color: #fff !important;
+    padding: 0px 3px !important;
+    line-height: unset !important;
+    border-radius: 50%;
+}
+
+.imgdivcls {
+    position: relative;
+    display: inline-block;
+}
+
+@media screen and (max-width: 750px) {
+    .mat-horizontal-stepper-header-container {
+        white-space: normal !important;
+        display: inline-block !important;
+        width: 100% !important;
+    }
+
+    .mat-step-header {
+        float: left !important;
+        height: 45px !important;
+        padding: 0px 10px !important;
+    }
+
+    .btmbtscpy {
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .hcheckbox .inputGroup {
+        display: block !important;
+    }
+
+    .mat-stepper-horizontal-line {
+        display: none !important;
+    }
+}
+
+.carousel-list .carousel-slide {
+    height: 200px !important;
+}
+
+.carousel .mat-icon-button {
+    color: #fff !important;
+}
+
+.carousel > button:first-of-type {
+    left: 15px !important;
+}
+
+.carousel > button:last-of-type {
+    right: 15px !important;
+}
+
+.red-snackbar {
+    background: red !important;
+    color: white !important;
+}
+
+.green-snackbar {
+    background: #1ca059 !important;
+    color: white !important;
+}
+
+.fieldbox {
+    background: #fff;
+    padding: 10px;
+    margin-top: -16px;
+    margin-bottom: -16px;
+    display: flex;
+}
+
+.containerpnl .fieldbox {
+    background: rgba(224, 224, 224, 0.6);
+    margin-top: 0;
+    margin-bottom: 10px;
+
+}
+
+.scrllpge {
+    overflow: auto;
+    max-height: calc(100vh - 112px);
+}
+
+.border_dotted {
+    border: #bbb 2px dashed;
+}
+
+.border_dotted1 {
+    border: #bbb 1px dashed;
+}
+
+.dltbtn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 5px;
+    margin: 5px;
+    z-index: 9;
+    border: 1px solid #00529b;
+}
+.dltbtninr {
+    float: right;
+
+    button {
+        padding: 5px;
+        border: 1px solid #00529b;
+        position: relative;
+        margin: 5px;
+        z-index: 9;
+    }
+}
+
+.template_checkbox {
+    .mat-checkbox {
+        display: block;
+
+        label {
+            display: block;
+            border: #ccc 2px solid;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            transition: color 200ms ease-in;
+            padding: 16px !important;
+            overflow: hidden;
+
+            .mat-checkbox-inner-container {
+                float: right;
+
+                .mat-checkbox-frame {
+                    width: 28px;
+                    height: 28px;
+                    content: "";
+                    border: 2px solid #d1d7dc;
+                    background-color: #fff;
+                    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 34 34' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+                    background-repeat: no-repeat;
+                    background-position: 2px 3px;
+                    position: absolute;
+                    right: 16px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                    transition: all 200ms ease-in;
+                }
+            }
+
+            .mat-checkbox-label {
+                float: left;
+            }
+        }
+    }
+
+    .mat-checkbox-checked .mat-checkbox-background {
+        width: 28px;
+        height: 28px;
+        content: "";
+        border: 2px solid #d1d7dc;
+        background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 34 34' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+        background-repeat: no-repeat;
+        background-position: 2px 3px;
+        z-index: 2;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        transition: all 200ms ease-in;
+        background-color: #00529b;
+        border-color: #00529b;
+        -webkit-box-shadow: 0px 2px 16px 0px rgba(0,82,115,1);
+        -moz-box-shadow: 0px 2px 16px 0px rgba(0,82,115,1);
+        box-shadow: 0px 2px 16px 0px rgba(0,82,115,1);
+    }
+}
+.mat-tab-label-container {
+    background:#ddd;
+}
+[contentEditable=false]:empty:not(:focus):before {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    opacity: 0.5;
+}
+.layoutmp .layoutm {
+    margin:0px !important;
+}
+.layoutmp .layoutp {
+    padding:0px !important;
+}
+.fa, .fas {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+}
+.fa, i {
+    font-size: 18px !important;
+}

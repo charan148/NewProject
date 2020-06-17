@@ -1,0 +1,110 @@
+<div id="forms" class="page-layout simple fullwidth nrmltab" fxLayout="column">
+
+    <div class="row ml-0 mt-16">
+        <div class="col-md-4 pr-2">
+            <mat-card class="pt-0">
+                <mat-card-content>
+                    <mat-tab-group mat-align-tabs="start">
+                        <mat-tab label="Roles">
+                            <mat-radio-group name="Roles" class="example-radio-group" [(ngModel)]="favoriteSeason">
+                                <mat-radio-button class="example-radio-button" *ngFor="let role of Roles" [value]="role.roleId" (click)="GetRolePrivileges(role.roleId)">
+                                    {{role.roleName}}
+                                </mat-radio-button>
+                            </mat-radio-group>
+                        </mat-tab>
+                    </mat-tab-group>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-8 pl-2">
+            <mat-card class="pt-0">
+                <mat-card-content>
+                    <mat-tab-group mat-align-tabs="start" color="primary" backgroundcolor="primary">
+                        <mat-tab label="Permissions">
+                            <div class="row ml-0 pt-16">
+                                <div class="col-md-4">
+                                    <mat-form-field class="w-100-p">
+                                        <mat-select class="w-100-p cstmslctpdng" [(ngModel)]="RoleSelectModuleId" (selectionChange)="selectModule()">
+                                            <mat-option *ngFor="let module of Modules" [value]="module.moduleID">
+                                                {{module.moduleName}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="w-100-p">
+                                        <mat-select class="w-100-p cstmslctpdng" [(ngModel)]="RoleSelectPageId" (selectionChange)="selectPage()">
+                                            <mat-option *ngFor="let page of PageSelected" [value]="page.pageID">
+                                                {{page.pageName}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4 pt-2">
+                                    <div class="example-button-row">
+                                        <button mat-mini-fab [disabled]="favoriteSeason == undefined" (click)="RolePrivilegeUpsert()" title="Save" aria-label="Save"><i class="fa fa-save"></i></button>
+                                    </div>
+                                </div>
+                                <div class="row pt-3">
+                                    <div class="col-md-12 fixedtree cstmcheck">
+                                        <ngx-treeview [items]="RoleItems" (selectedChange)="onRoleSelectedChange($event)"></ngx-treeview>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                </div>
+                                <div class="col-md-12">
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Users" [disabled]="favoriteSeason == undefined">
+                            <div class="row pt-16 ml-0">
+                                <div class="col-12 text-right p-0 mb-2">
+                                    <mat-form-field class="col-4 ml-auto">
+                                        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                                    </mat-form-field>
+                                    <button mat-mini-fab matTooltip="Add User" (click)="Adduser()">
+                                        <i class="fa fa-plus"></i>Add
+                                    </button>
+                                    <button mat-mini-fab (click)="DeleteUserRole()">Delete</button>
+                                </div>
+                                <table mat-table [dataSource]="dataSource" matSort>
+
+                                    <!-- Checkbox Column -->
+                                    <ng-container matColumnDef="checkbox">
+                                        <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef width="80px">
+                                            <mat-checkbox tabindex="0" aria-label="Check Uncheck All" (change)="$event ? masterToggle() : null"
+                                                          [checked]="selection.hasValue() && isAllSelected()"
+                                                          [indeterminate]="selection.hasValue() && !isAllSelected()">
+                                            </mat-checkbox>
+                                        </th>
+                                        <td tabindex="0" mat-cell *matCellDef="let row" class="mat-data">
+                                            <mat-checkbox tabindex="0" aria-label="Check Uncheck" (click)="[$event.stopPropagation(), row.highlighted = !row.highlighted] "
+                                                          (change)="$event ? selection.toggle(row) : null"
+                                                          [checked]="selection.isSelected(row)">
+                                            </mat-checkbox>
+                                        </td>
+                                    </ng-container>
+
+                                    <!-- ID Column -->
+                                    <ng-container matColumnDef="userName">
+                                        <th scope="col" tabindex="0" aria-label="User Name" title="User Name" mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                                        <td tabindex="0" attr.aria-label="{{row.userName}}" title="{{row.userName}}" mat-cell *matCellDef="let row"> {{row.userName}} </td>
+                                    </ng-container>
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{hovered: mat-row.hovered}"
+                                        (click)="[selection.toggle(row), row.highlighted = !row.highlighted] " (mouseover)="row.hovered = true" (mouseout)="row.hovered = false" [ngStyle]="{'background-color':selection.isSelected(row) ? '#d2ffeb' : 'white'}"></tr>
+                                </table>
+                                <div class="col-12 p-0">
+                                    <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+                                </div>
+                            </div>
+                        </mat-tab>
+
+                    </mat-tab-group>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

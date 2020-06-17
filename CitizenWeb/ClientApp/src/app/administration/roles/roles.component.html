@@ -1,0 +1,62 @@
+
+<div class="col-12 pt-3">
+    <div class="col-8 float-left pl-0">
+        <button mat-mini-fab (click)="createNewRole()" *ngIf="createRoleButton" title="Add"><i class="fa fa-plus"></i><span class="d-none">Add</span></button>
+        <button mat-mini-fab (click)="editRole()" *ngIf="editRoleButton" title="Edit"><i class="fa fa-pencil-alt"></i><span class="d-none">Edit</span></button>
+        <button mat-mini-fab (click)="viewRole()" *ngIf="viewRoleButton" title="View"><i class="fa fa-eye"></i><span class="d-none">View</span></button>
+        <button mat-mini-fab (click)="deleteRole()" *ngIf="deleteRoleButton" title="Delete"><i class="fa fa-trash"></i><span class="d-none">Delete</span></button>
+        <button mat-mini-fab (click)="refreshRole()" title="Refresh"><i class="fa fa-repeat"></i><span class="d-none">Refresh</span></button>
+        
+    </div>
+    <mat-form-field class="col-4 float-left pr-0">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" [(ngModel)]="filterrole" name="filterrole" value="filterrole">
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+            <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef width="80px">
+                <mat-checkbox tabindex="0" aria-label="Check Uncheck All" (change)="$event ? masterToggle() : null"
+                              [checked]="selection.hasValue() && isAllSelected()"
+                              [indeterminate]="selection.hasValue() && !isAllSelected()">
+                   
+                </mat-checkbox>
+                
+            </th>
+            <td tabindex="0" mat-cell *matCellDef="let row" class="mat-data">
+                <mat-checkbox tabindex="0" aria-label="Check Uncheck Role" (click)="[$event.stopPropagation(), row.highlighted = !row.highlighted] "
+                              (change)="$event ? selection.toggle(row) : null"
+                              [checked]="selection.isSelected(row)">
+                    
+                </mat-checkbox>
+               
+            </td>
+        </ng-container>
+
+        <!-- Role Name Column -->
+        <ng-container matColumnDef="roleName">
+            <th scope="col" tabindex="0" mat-header-cell title="Role Name" aria-lable="Role Name" *matHeaderCellDef mat-sort-header> Role Name </th>
+            <td tabindex="0" mat-cell title="{{row.roleName}}" attr.aria-lable="{{row.roleName}}" *matCellDef="let row"> <a tabindex="0" (click)="roleclick(row.roleId)">{{row.roleName}}</a> </td>
+        </ng-container>
+
+        <!-- isActive Column -->
+        <ng-container matColumnDef="isActive">
+            <th scope="col" tabindex="0" aria-label="Status" title="Status" mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+            <td tabindex="0" mat-cell *matCellDef="let row">
+                <p *ngIf="row.isActive == true" aria-label="Active" title="Active">
+                    Active
+                </p>
+                <p *ngIf="row.isActive == false" aria-label="Inactive" title="Inactive">
+                    Inactive
+                </p>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{hovered: mat-row.hovered}"
+            (click)="[selection.toggle(row), row.highlighted = !row.highlighted] " (mouseover)="row.hovered = true" (mouseout)="row.hovered = false" [ngStyle]="{'background-color':selection.isSelected(row) ? '#d2ffeb' : 'white'}"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+</div>
+

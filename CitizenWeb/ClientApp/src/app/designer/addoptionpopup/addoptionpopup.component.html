@@ -1,0 +1,84 @@
+<mat-tab-group>
+    <mat-tab label="Lookups">
+        <div fxlayout="row" class="mt-2" fxlayoutalign="center">
+
+            <div fxlayout="row" fxlayoutalign="space-between">
+                <div fxlayout="column" fxfill="50" fxfill.xs="100" fxlayoutalign="space-between">
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>Lookup Group</mat-label>
+                        <mat-select matInput class="w-100-p cstmslctpdng  pl-1 pr-1" [(ngModel)]="selectedOption" (ngModelChange)="lookupchange()">
+                            <mat-option *ngFor="let opt of dropDownData" [value]="opt.lookupId">
+                                {{opt.lookupName}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxlayout="column" fxfill="50" fxfill.xs="100" fxlayoutalign="space-between">
+                    <ul class="list-group">
+                        <li class="list-group-item active">Lookup Details</li>
+                        <li class="list-group-item" *ngFor="let opt of options">{{opt.lookupDetailsDescription}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div fxlayout="row" fxlayoutalign="middle end" class="text-right mb-1 mb-1">
+                <button class=" btn btn-primary text-white mt-2 " mat-mini-fab title="Save" (click)="lookupsave()">save</button>
+                <button class="btn btn-primary text-white  mt-2 " mat-mini-fab title="Cancel" [mat-dialog-close]="" cdkFocusInitial>close</button>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="New Lookup">
+        <!--<mat-form-field appearance="outline" fxFlex="100">
+        <mat-label>Lookup Group Name</mat-label>
+        <input matInput type="text" autocomplete="off" required [(ngModel)]="groupName" />
+    </mat-form-field>-->
+        <form name="form" class="mt-2" #lookupform="ngForm" fxlayout="row" fxlayoutalign="center center" fxlayoutgap="5px">
+            <div fxflex fxlayout="column" fxFlex="100">
+                <mat-form-field appearance="outline" class="w-100-p">
+                    <mat-label>Lookup  Name</mat-label>
+                    <input matInput type="text" autocomplete="off" name="lookupName" id="lookupName" #lookupName="ngModel" (blur)="lookupBlurEvent()" [(ngModel)]="DesignerLookup.LookupName" required />
+                    <mat-error *ngIf="distinctLookupName">Lookup Name already exists</mat-error>
+                </mat-form-field>
+            </div>
+            <!-- <div fxflex fxlayout="column" class="mr-2" fxFlex="32">
+             <mat-form-field appearance="outline" class="w-100-p">
+                 <mat-label>Lookup Description</mat-label>
+                 <input matInput type="text" autocomplete="off" name="lookupDescription" id="lookupDescription" #lookupDescription="ngModel" [(ngModel)]="Lookupobj.lookupDescription" required />
+             </mat-form-field>
+         </div>
+         <div fxflex fxlayout="column" class="mr-2" fxFlex="32">
+             <mat-form-field appearance="outline" class="w-100-p">
+                 <mat-label>Lookup Short Description</mat-label>
+                 <input matInput type="text" autocomplete="off" name="lookupShortDescription" id="lookupShortDescription" #lookupShortDescription="ngModel" [(ngModel)]="Lookupobj.lookupShortDescription" required />
+             </mat-form-field>
+         </div>-->
+        </form>
+        <div *ngFor="let detail of newLookup;let i= index" fxlayout="row" fxlayoutalign="center center" fxlayoutgap="5px">
+            <div fxflex fxlayout="column" class="mr-2" fxFlex="100">
+                <mat-form-field appearance="outline" class="w-100-p">
+                    <mat-label>Lookup Details Name</mat-label>
+                    <input matInput type="text" autocomplete="off" required [(ngModel)]="detail.LookupDetailsValue" (input)="inputEvent(detail)" />
+
+
+                </mat-form-field>
+                <mat-error *ngIf="detail.error">Lookup Details Name is required</mat-error>
+            </div>
+
+            <button *ngIf="i!=newLookup.length-1" class="btn btn-primary text-white mt-2  " style="margin:5px" (click)="removeDetails(detail)"><span class="material-icons">delete</span></button>
+            <button *ngIf="i==newLookup.length-1" class="btn btn-primary text-white mt-2  " style="margin:5px" (click)="addDetails()"><span class="material-icons">add</span></button>
+
+
+            <!-- <div fxflex fxlayout="column" class="mr-2" fxFlex="49">
+
+            <mat-form-field appearance="outline"  class="w-100-p">
+                <mat-label>Lookup Description </mat-label>
+                <input matInput type="text" autocomplete="off" required [(ngModel)]="detail.value" />
+            </mat-form-field>
+        </div>-->
+        </div>
+        
+        <div class="text-right">
+            <button class="btn btn-primary text-white mt-2" *ngIf="newLookup.length!=0" [disabled]="!lookupform.valid" (click)="savelookupDetails(groupName)">Save Details</button>
+            <button class="btn btn-primary text-white  mt-2 " mat-mini-fab title="Cancel" [mat-dialog-close]="" cdkFocusInitial>close</button>
+        </div>
+    </mat-tab>
+</mat-tab-group>

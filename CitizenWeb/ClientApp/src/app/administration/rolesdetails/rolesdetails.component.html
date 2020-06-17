@@ -1,0 +1,51 @@
+<div id="forms" class="page-layout carded left-sidebar inner-sidebar inner-scroll detailspg">
+
+    <!-- / TOP BACKGROUND -->
+    <!-- CENTER -->
+    <div class="center ml-0 mr-0">
+        <!-- CONTENT HEADER -->
+        <div class="toolbar pagebreadcrumb px-24 py-8">
+            <div fxLayout="column" fxLayoutAlign="center start">
+                <div class="h1">Role Details</div>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-12 text-right pr-0">
+                <button mat-mini-fab title="Save Role" (click)="saveRole()" *ngIf="!disable"><i class="fas fa-save"></i><span class="d-none">Save</span></button>
+                <button mat-mini-fab (click)="refresh()" title="Refresh" *ngIf="!disable"><i class="fas fa-redo"></i><span class="d-none">Refresh</span></button>
+                <button mat-mini-fab (click)="close()" title="Cancel"><i class="fas fa-times"></i><span class="d-none">Cancel</span></button>
+
+            </div>
+        </div>
+        <!-- / CONTENT HEADER -->
+        <!-- CONTENT CARD -->
+        <div class="content-card rounded-0 noneboxshadow bg-none pr-16 pl-16" fusePerfectScrollbar>
+
+            <mat-card class="p-0 mb-3 pb-3">
+                <mat-card-header>
+                    <mat-card-title class="mb-0">ROLE DETAILS</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="pt-2">
+                    <form>
+                        <div class="row ml-0 mr-0">
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                    <input matInput placeholder="Role Name" [(ngModel)]="Roleobj.roleName" [disabled]="disable" required [ngModelOptions]="{standalone: true}" maxlength="100" (input)="roleNameChange(Roleobj.roleName)">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-checkbox [(ngModel)]="Roleobj.isActive" [disabled]="disable" [ngModelOptions]="{standalone: true}">Is Active?</mat-checkbox>
+                            </div>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+
+            <!-- / CONTENT CARD -->
+        </div>
+    </div>
+    <!-- / CENTER -->
+</div>
+
+
+

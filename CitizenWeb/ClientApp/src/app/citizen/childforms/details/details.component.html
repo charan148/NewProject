@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form" class="form-horizontal">
+    <div *ngFor="let field of fields">
+        <app-field-builder [field]="field" [form]="form" chkpages="details"></app-field-builder>
+    </div>
+    <div class="form-row"></div>
+    
+    <div class="hcheckbox">        
+        <hr>
+        <div fxLayout="row" class="btmbtscpy" fxLayoutAlign="space-between">
+            <div fxflex.gt-xs="100">
+                Powered by <a><span class="textcolor">Simplify i3<sup>&reg;</sup></span></a>
+                <br>
+                <div>
+                    <small>This site is protected by reCAPTCHA and the Google <a><span class="textcolor">Privacy Policy</span></a> and <a><span class="textcolor">Terms of Service</span></a> apply.</small>
+                </div>
+            </div>
+            <div fxflex.gt-xs="100">
+                <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
+                    Back
+                </button>
+                <button mat-raised-button type="submit" color="accent" matStepperNext >
+                    Confirm Details
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

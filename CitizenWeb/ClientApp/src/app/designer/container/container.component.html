@@ -1,0 +1,317 @@
+
+<div class="dndPlaceholder"
+     #placeholder1></div>
+<div class="dndPlaceholder"
+     #placeholder2></div>
+
+<div class="panel" [dndType]="models.type"
+     [dndDraggable]
+     (dndMoved)="removeItem(models, list)"
+     [dndObject]="models">
+    <div class="panel-heading">
+        <div class="dltbtninr">
+            <button (click)="rowDelete(models,list)" class=" text-danger "><span class="material-icons">delete</span></button>
+        </div>
+    </div>
+    
+    <div class="panel-body mt-16 mb-16 layoutmp">
+        <div class="row m-0">
+            <div class="col-md-6 pl-0 pr-05 border_dotted1" fxlayoutalign="center" contentEditable=false data-text="Drag here"  style="min-height:50px" [dndList]="{
+              allowedTypes: ['textbox','checkbox','dropdown','textarea','radiobutton','label']}"
+                 [dndModel]="model.columns"
+                 [dndPlaceholder]="placeholder1">
+                <ng-container *ngFor="let item of model.columns">
+                    <ng-container *ngIf="isArray(item)">
+                        <ng-container *ngFor="let subItem of item">
+                            <container *ngIf="subItem.type === 'layout'"
+                                       [list]="item"
+                                       [model]="subItem" class="mb-10"></container>
+                            <div *ngIf="subItem.type === 'textbox'" [dndType]="subItem.type"
+                                 [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                                 (dndMoved)="removeItem(subItem, item)"
+                                 [dndObject]="subItem" class="w-100-p">
+                                <div class="dltbtninr">
+                                    <button (click)="rowDelete(subItem,item)" class="text-danger"><span class="material-icons">delete</span></button>
+                                </div>
+                                <app-textbox [item]="subItem" chkpre="drop"></app-textbox>
+                            </div>
+                            <div *ngIf="subItem.type === 'textarea'" [dndType]="subItem.type"
+                                 [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                                 (dndMoved)="removeItem(subItem, item)"
+                                 [dndObject]="subItem" class="w-100-p">
+                                <div class="dltbtninr">
+                                    <button (click)="rowDelete(subItem,item)" class="text-danger"><span class="material-icons">delete</span></button>
+                                </div>
+                                <app-textarea [item]="subItem" chkpre="drop"></app-textarea>
+                            </div>
+                            <div *ngIf="subItem.type === 'checkbox'" [dndType]="subItem.type"
+                                 [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                                 (dndMoved)="removeItem(subItem, item)"
+                                 [dndObject]="subItem" class="w-100-p">
+                                <div class="dltbtninr">
+                                    <button (click)="rowDelete(subItem,item)" class="text-danger"><span class="material-icons">delete</span></button>
+                                </div>
+                                <app-checkbox [item]="subItem" chkpre="drop"></app-checkbox>
+                            </div>
+                            <div *ngIf="subItem.type === 'dropdown'" [dndType]="subItem.type"
+                                 [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                                 (dndMoved)="removeItem(subItem, item)"
+                                 [dndObject]="subItem" class="w-100-p">
+                                <div class="dltbtninr">
+                                    <button (click)="rowDelete(subItem,item)" class="text-danger"><span class="material-icons">delete</span></button>
+                                </div>
+                                <app-dropdown [item]="subItem" chkpre="drop"></app-dropdown>
+                            </div>
+                            <div *ngIf="subItem.type === 'radiobutton'" [dndType]="subItem.type"
+                                 [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                                 (dndMoved)="removeItem(subItem, item)"
+                                 [dndObject]="subItem" class="w-100-p">
+                                <div class="dltbtninr">
+                                    <button (click)="rowDelete(subItem,item)" class="text-danger"><span class="material-icons">delete</span></button>
+                                </div>
+                                <app-radio [item]="subItem" chkpre="drop"></app-radio>
+                            </div>
+                            <div *ngIf="subItem.type === 'label'" [dndType]="subItem.type"
+                                 [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                                 (dndMoved)="removeItem(subItem, item)"
+                                 [dndObject]="subItem" class="w-100-p">
+                                <div class="dltbtninr">
+                                    <button (click)="rowDelete(subItem,item)" class="text-danger"><span class="material-icons">delete</span></button>
+                                </div>
+                                <div class="form_builder_field fieldbox">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <mat-form-field appearance="outline" fxFlex="100">
+                                                <mat-label>Label Content</mat-label>
+                                                <input matInput type="text" autocomplete="off" [(ngModel)]="item.label" />
+                                            </mat-form-field>
+                                            <div class="row">
+                                                <span *ngIf="item.valid" class="text-danger input_alert_txt">Label is Required</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="!isArray(item)">
+                        <container *ngIf="item.type === 'layout'" [list]="model.columns"
+                                   [model]="item"></container>
+                        <div *ngIf="item.type === 'textbox'" [dndType]="item.type"
+                             [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                             (dndMoved)="removeItem(item, model.columns)"
+                             [dndObject]="item" class="w-100-p">
+                            <div class="dltbtninr">
+                                <button (click)="rowDelete(item,model.columns)" class=" text-danger"><span class="material-icons">delete</span></button>
+                            </div>
+                            <app-textbox [item]="item" chkpre="drop"></app-textbox>
+                        </div>
+                        <div *ngIf="item.type === 'textarea'" [dndType]="item.type"
+                             [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                             (dndMoved)="removeItem(item, model.columns)"
+                             [dndObject]="item" class="w-100-p">
+                            <div class="dltbtninr">
+                                <button (click)="rowDelete(item,model.columns)" class=" text-danger"><span class="material-icons">delete</span></button>
+                            </div>
+                            <app-textarea [item]="item" chkpre="drop"></app-textarea>
+                        </div>
+                        <div *ngIf="item.type === 'checkbox'" [dndType]="item.type"
+                             [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                             (dndMoved)="removeItem(item, model.columns)"
+                             [dndObject]="item" class="w-100-p">
+                            <div class="dltbtninr">
+                                <button (click)="rowDelete(item,model.columns)" class=" text-danger"><span class="material-icons">delete</span></button>
+                            </div>
+                            <app-checkbox [item]="item" chkpre="drop"></app-checkbox>
+                        </div>
+                        <div *ngIf="item.type === 'dropdown'" [dndType]="item.type"
+                             [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                             (dndMoved)="removeItem(item, model.columns)"
+                             [dndObject]="item" class="w-100-p">
+                            <div class="dltbtninr">
+                                <button (click)="rowDelete(item,model.columns)" class=" text-danger"><span class="material-icons">delete</span></button>
+                            </div>
+                            <app-dropdown [item]="item" chkpre="drop"></app-dropdown>
+                        </div>
+                        <div *ngIf="item.type === 'radiobutton'" [dndType]="item.type"
+                             [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                             (dndMoved)="removeItem(item, model.columns)"
+                             [dndObject]="item" class="w-100-p">
+                            <div class="dltbtninr">
+                                <button (click)="rowDelete(item,model.columns)" class=" text-danger"><span class="material-icons">delete</span></button>
+                            </div>
+                            <app-radio [item]="item" chkpre="drop"></app-radio>
+                        </div>
+                        <div *ngIf="item.type === 'label'" [dndType]="item.type"
+                             [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                             (dndMoved)="removeItem(item, model.columns)"
+                             [dndObject]="item" class="w-100-p">
+                            <div class="dltbtninr">
+                                <button (click)="rowDelete(item,model.columns)" class=" text-danger"><span class="material-icons">delete</span></button>
+                            </div>
+                            <div class="form_builder_field fieldbox">
+                                <div class="row ">
+                                    <div class="col-md-12">
+                                        <mat-form-field appearance="outline" fxFlex="100">
+                                            <mat-label>Label Content</mat-label>
+                                            <input matInput type="text" autocomplete="off" [(ngModel)]="item.label" />
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </div>
+
+            <div class="col-md-6 pl-05 pr-0 border_dotted1"  contentEditable=false data-text="Drag here"  style="min-height:50px" [dndList]="{
+        allowedTypes: ['textbox','checkbox','dropdown','textarea','radiobutton','label']}"
+                 [dndModel]="model1.column1"
+                 [dndPlaceholder]="placeholder2">
+                <ng-container *ngFor="let item of model1.column1">
+                    <ng-container *ngIf="isArray(item)">
+                        <ng-container *ngFor="let subItem of item">
+                            <container *ngIf="subItem.type === 'layout'"
+                                       [list]="item"
+                                       [model1]="subItem"></container>
+                            <div *ngIf="subItem.type === 'textbox'" [dndType]="subItem.type"
+                                 [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                                 (dndMoved)="removeItem(subItem, item)"
+                                 [dndObject]="subItem" class="w-100-p">
+                                <div class="dltbtninr">
+                                    <button (click)="rowDelete(subItem,item)" class=" text-danger"><span class="material-icons">delete</span></button>
+                                </div>
+                                <app-textbox [item]="subItem" chkpre="drop"></app-textbox>
+                            </div>
+                            <div *ngIf="subItem.type === 'textarea'" [dndType]="subItem.type"
+                                 [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                                 (dndMoved)="removeItem(subItem, item)"
+                                 [dndObject]="subItem" class="w-100-p">
+                                <div class="dltbtninr">
+                                    <button (click)="rowDelete(subItem,item)" class=" text-danger"><span class="material-icons">delete</span></button>
+                                </div>
+                                <app-textarea [item]="subItem" chkpre="drop"></app-textarea>
+                            </div>
+                            <div *ngIf="subItem.type === 'checkbox'" [dndType]="subItem.type"
+                                 [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                                 (dndMoved)="removeItem(subItem, item)"
+                                 [dndObject]="subItem" class="w-100-p">
+                                <div class="dltbtninr">
+                                    <button (click)="rowDelete(subItem,item)" class=" text-danger"><span class="material-icons">delete</span></button>
+                                </div>
+                                <app-checkbox [item]="subItem" chkpre="drop"></app-checkbox>
+                            </div>
+                            <div *ngIf="subItem.type === 'dropdown'" [dndType]="subItem.type"
+                                 [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                                 (dndMoved)="removeItem(subItem, item)"
+                                 [dndObject]="subItem" class="w-100-p">
+                                <div class="dltbtninr">
+                                    <button (click)="rowDelete(subItem,item)" class=" text-danger"><span class="material-icons">delete</span></button>
+                                </div>
+                                <app-dropdown [item]="subItem" chkpre="drop"></app-dropdown>
+                            </div>
+                            <div *ngIf="subItem.type === 'radiobutton'" [dndType]="subItem.type"
+                                 [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                                 (dndMoved)="removeItem(subItem, item)"
+                                 [dndObject]="subItem" class="w-100-p">
+                                <div class="dltbtninr">
+                                    <button (click)="rowDelete(subItem,item)" class=" text-danger"><span class="material-icons">delete</span></button>
+                                </div>
+                                <app-radio [item]="subItem" chkpre="drop"></app-radio>
+                            </div>
+                            <div *ngIf="subItem.type === 'label'" [dndType]="subItem.type"
+                                 [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                                 (dndMoved)="removeItem(subItem, item)"
+                                 [dndObject]="subItem" class="w-100-p">
+                                <div class="dltbtninr">
+                                    <button (click)="rowDelete(subItem,item)" class=" text-danger"><span class="material-icons">delete</span></button>
+                                </div>
+                                <div class="form_builder_field fieldbox">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <mat-form-field appearance="outline" fxFlex="100">
+                                                <mat-label>Label Content</mat-label>
+                                                <input matInput type="text" autocomplete="off" [(ngModel)]="subItem.label" />
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="!isArray(item)">
+                        <container *ngIf="item.type === 'layout'" [list]="model1.column1"
+                                   [model1]="item"></container>
+                        <div *ngIf="item.type === 'textbox'" [dndType]="item.type"
+                             [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                             (dndMoved)="removeItem(item, model1.column1)"
+                             [dndObject]="item" class="w-100-p">
+                            <div class="dltbtninr">
+                                <button (click)="rowDelete(item,model1.column1)" class=" text-danger"><span class="material-icons">delete</span></button>
+                            </div>
+                            <app-textbox [item]="item" chkpre="drop"></app-textbox>
+                        </div>
+                        <div *ngIf="item.type === 'textarea'" [dndType]="item.type"
+                             [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                             (dndMoved)="removeItem(item, model1.column1)"
+                             [dndObject]="item" class="w-100-p">
+                            <div class="dltbtninr">
+                                <button (click)="rowDelete(item,model1.column1)" class=" text-danger"><span class="material-icons">delete</span></button>
+                            </div>
+                            <app-textarea [item]="item" chkpre="drop"></app-textarea>
+                        </div>
+                        <div *ngIf="item.type === 'checkbox'" [dndType]="item.type"
+                             [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                             (dndMoved)="removeItem(item, model1.column1)"
+                             [dndObject]="item" class="w-100-p">
+                            <div class="dltbtninr">
+                                <button (click)="rowDelete(item,model1.column1)" class=" text-danger"><span class="material-icons">delete</span></button>
+                            </div>
+                            <app-checkbox [item]="item" chkpre="drop"></app-checkbox>
+                        </div>
+                        <div *ngIf="item.type === 'dropdown'" [dndType]="item.type"
+                             [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                             (dndMoved)="removeItem(item, model1.column1)"
+                             [dndObject]="item" class="w-100-p">
+                            <div class="dltbtninr">
+                                <button (click)="rowDelete(item,model1.column1)" class=" text-danger"><span class="material-icons">delete</span></button>
+                            </div>
+                            <app-dropdown [item]="item" chkpre="drop"></app-dropdown>
+                        </div>
+                        <div *ngIf="item.type === 'radiobutton'" [dndType]="item.type"
+                             [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                             (dndMoved)="removeItem(item, model1.column1)"
+                             [dndObject]="item" class="w-100-p">
+                            <div class="dltbtninr">
+                                <button (click)="rowDelete(item,model1.column1)" class=" text-danger"><span class="material-icons">delete</span></button>
+                            </div>
+                            <app-radio [item]="item" chkpre="drop"></app-radio>
+                        </div>
+                        <div *ngIf="item.type === 'label'" [dndType]="item.type"
+                             [dndDraggable]="{draggable:true, effectAllowed:'move'}"
+                             (dndMoved)="removeItem(item, model1.column1)"
+                             [dndObject]="item" class="w-100-p">
+                            <div class="dltbtninr">
+                                <button (click)="rowDelete(item,model1.column1)" class=" text-danger"><span class="material-icons">delete</span></button>
+                            </div>
+
+                            <div class="form_builder_field fieldbox">
+                                <div class="row ">
+                                    <div class="col-md-12">
+                                        <mat-form-field appearance="outline" fxFlex="100">
+                                            <mat-label>Label Content</mat-label>
+                                            <input matInput type="text" autocomplete="off" [(ngModel)]="item.label" />
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

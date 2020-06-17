@@ -1,0 +1,22 @@
+
+<div [formGroup]="form" *ngIf="chkpages=='details'">
+    <div [formGroupName]="field.name">
+        <span style="font-weight:bold">{{field.label}}</span>
+        <div>
+            <mat-radio-group class="form-control" type="radiobutton">
+                <mat-radio-button style="margin:5px" *ngFor="let opt of field.templateControlOptions" [value]="opt.label" (change)="field.change(opt.key,form,opt.label,field.name,'radio')">{{opt.label}}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+</div>
+
+<div [formGroup]="form" *ngIf="chkpages=='requestDetails'">
+    <div [formGroupName]="field.name">
+        <span style="font-weight:bold">{{field.label}}</span>
+        <div class="hcheckbox">
+            <mat-radio-group class="form-control" type="radiobutton">
+                <mat-radio-button style="margin:5px" *ngFor="let opt of field.templateControlOptions" [value]="opt.label">{{opt.label}}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+</div>

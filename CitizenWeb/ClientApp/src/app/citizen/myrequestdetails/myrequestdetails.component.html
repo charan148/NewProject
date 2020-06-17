@@ -1,0 +1,192 @@
+<!--<div id="products" class="page-layout carded fullwidth inner-scroll">
+
+
+    <div class="top-bg accent"></div>
+
+    <div class="center">
+
+
+        <div class="header accent pt-24 pb-24" fxLayout="row" fxLayoutAlign="start center">
+            <h2 class="m-0">
+                {{requestdetails.reference}}
+            </h2>
+        </div>
+
+        <div class="content-card">
+
+
+            <div class="content" fusePerfectScrollbar>
+                <div class="card">
+                    <div class="card-preview">
+                        <div class="fuse-card mb-4">
+
+                            <div fxLayout="row wrap">
+
+                                <div fxFlex="75" fxLayout="column" class="pr-16">
+                                    <div fxLayout="row" fxLayoutAlign="space-between">
+                                        <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                            <mat-label> Description</mat-label>
+                                            <textarea matInput placeholder="Product Description"
+                                                      name="description"
+                                                      rows="5" [(ngModel)]="requestdetails.description" readonly>
+                                            </textarea>
+                                        </mat-form-field>
+                                    </div>
+
+
+                                    <div fxLayout="row" fxLayoutAlign="space-between">
+                                        <label class="h3 text-bold">What was not picked up?</label>
+
+                                    </div>
+                                    <div fxLayout="row" class="mb-16" fxLayoutAlign="space-between">
+
+                                        <section class="example-section">
+                                            <mat-checkbox class="example-margin" [(ngModel)]="requestdetails.Garbage" [disabled]="true" *ngIf="isShow">Garbage</mat-checkbox>
+                                            <mat-checkbox class="example-margin" [(ngModel)]="requestdetails.Recycling" [disabled]="true" style="margin:10px" *ngIf="isShow">Recycling</mat-checkbox>
+                                            <mat-checkbox class="example-margin" [(ngModel)]="requestdetails.YardWaste" [disabled]="true" style="margin:10px" *ngIf="isShowYard">Yard Waste</mat-checkbox>
+                                        </section>
+                                    </div>
+
+                                </div>
+                                <div fxFlex="25" fxLayout="column">
+                                    <img [src]="requestdetails.imgsrc">
+
+                                </div>
+                            </div>
+
+                            <div fxLayout="row" fxLayoutAlign="space-between">
+
+                                <mat-form-field appearance="outline" floatLabel="always" fxFlex="32">
+                                    <mat-label>Status</mat-label>
+                                    <input matInput placeholder="Status"
+                                           name="Width"
+                                           [(ngModel)]="requestdetails.status" readonly>
+                                </mat-form-field>
+
+
+                                <mat-form-field appearance="outline" floatLabel="always" fxFlex="32">
+                                    <mat-label>Priority</mat-label>
+                                    <input matInput placeholder="Priority"
+                                           name="Width"
+                                           [(ngModel)]="requestdetails.priority" readonly>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="outline" floatLabel="always" fxFlex="32">
+                                    <mat-label>Created Date</mat-label>
+                                    <input matInput placeholder="Created Date"
+                                           name="Width"
+                                           [(ngModel)]="requestdetails.date" readonly>
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="end center" class="mt-4">
+                                <button mat-raised-button (click)="SubmitClick()" type="button" color="accent">
+                                    Resolved
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>-->
+
+<div id="products" class="page-layout carded fullwidth inner-scroll">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+    <!-- CENTER -->
+    <div class="center">
+
+        <!-- HEADER -->
+        <div class="header accent pt-24 pb-24" fxLayout="row" fxLayoutAlign="start center">
+            <h2 class="m-0">
+                {{requestdetails.requestName}}
+            </h2>
+        </div>
+        <!-- / HEADER -->
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+
+
+            <div class="content" fusePerfectScrollbar>
+                <div class="card">
+                    <div class="card-preview">
+                        <div class="fuse-card mb-4">
+
+                            <div fxLayout="row wrap">
+                                <div fxFlex="75" fxLayout="column" class="pr-16">
+                                    <div fxLayout="row" fxLayoutAlign="space-between" *ngIf="dynamicJsonFields.length!=0">
+                                        <form (ngSubmit)="onSubmit()" [formGroup]="form" class="form-horizontal w-100-p">
+                                            <div *ngFor="let field of dynamicJsonFields">
+                                                <app-field-builder [field]="field" [form]="form" chkpages="requestDetails"></app-field-builder>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div fxFlex="25" fxLayout="column">
+                                    <mat-carousel timings="250ms ease-in"
+                                                  color="accent"
+                                                  maxWidth="auto"
+                                                  proportion="25"
+                                                  slides="3"
+                                                  [loop]="true"
+                                                  [hideArrows]="false"
+                                                  [hideIndicators]="false"
+                                                  [useKeyboard]="true"
+                                                  [useMouseWheel]="false"
+                                                  orientation="ltr">
+                                        <mat-carousel-slide #matCarouselSlide
+                                                            *ngFor="let slide of images,let i=index"
+                                                            [image]="slide.imageUrl"></mat-carousel-slide>
+                                    </mat-carousel>
+
+                                </div>
+                            </div>
+
+                            <div fxLayout="row" fxLayoutAlign="space-between">
+
+                                <mat-form-field appearance="outline" floatLabel="always" fxFlex="32">
+                                    <mat-label>Status</mat-label>
+                                    <input matInput placeholder="Status"
+                                           name="Width"
+                                           [(ngModel)]="requestdetails.requestStatusText" readonly>
+                                </mat-form-field>
+
+
+                                <mat-form-field appearance="outline" floatLabel="always" fxFlex="32">
+                                    <mat-label>Priority</mat-label>
+                                    <input matInput placeholder="Priority"
+                                           name="Width"
+                                           [(ngModel)]="requestdetails.priority" readonly>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="outline" floatLabel="always" fxFlex="32">
+                                    <mat-label>Created Date</mat-label>
+                                    <input matInput placeholder="Created Date"
+                                           name="Width"
+                                           [(ngModel)]="requestdetails.createdDate" readonly>
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="end center" class="mt-4">
+                                <button mat-raised-button (click)="SubmitClick()" type="button" color="accent">
+                                    Resolved
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <!-- / CONTENT CARD -->
+    </div>
+    <!-- / CENTER -->
+</div>
+

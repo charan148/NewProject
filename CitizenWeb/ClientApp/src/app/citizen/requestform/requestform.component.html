@@ -1,0 +1,245 @@
+<div id="forms" class="page-layout carded fullwidth inner-scroll">
+    <div class="top-bg accent"></div>
+    <div class="center">
+        <div class="content-card bg-none">
+            <div class="list_land_list" fusePerfectScrollbar #scroll>
+                <div class="mt-24" fxLayout="column" fxLayoutAlign="start" fxLayout.gt-md="row">
+
+                    <div class="horizontal-stepper-wrapper m-4" fxFlex="75" fxflex.gt-xs="100">
+                        <!-- HORIZONTAL STEPPER EXAMPLE -->
+                        <mat-horizontal-stepper *ngIf="dynamicJsonFields!=0" class="mat-elevation-z4" [linear]="true" #stepper>
+                            <!-- Location-->
+                            <mat-step completed="false">
+                                <ng-template matStepLabel>Location</ng-template>
+                                <div>
+                                    <!--<app-location (confirmLocationClick)='confirmLoaction(stepper)' (locationSearchs)='locationSearchs($event)'></app-location>-->
+                                    <app-location (confirmLocationClick)='confirmLoaction($event,stepper)' (locationSearchs)='locationSearchs($event)'></app-location>
+                                </div>
+                            </mat-step>
+                            <!--->Duplicate-->
+                            <mat-step *ngIf="reportExist">
+                                <ng-template matStepLabel>Similar Requests</ng-template>
+                                <div>
+                                    <!--<similar-requests (followClick)='follow(stepper)' [location]="location" [reportName]="reportName"></similar-requests>-->
+                                    <similar-requests (followClick)='follow(stepper,$event)' [similarRequestsList]='similarRequestsList' [reportName]="reportName" ></similar-requests>
+                                </div>
+                                <hr>
+                                <div fxLayout="row" class="btmbtscpy" fxLayoutAlign="space-between">
+                                    <div fxflex.gt-xs="100">
+                                        Powered by <a><span class="textcolor">Simplify i3<sup>&reg;</sup></span></a>
+                                        <br>
+                                        <div>
+                                            <small>This site is protected by reCAPTCHA and the Google <a><span class="textcolor">Privacy Policy</span></a> and <a><span class="textcolor">Terms of Service</span></a> apply.</small>
+                                        </div>
+                                    </div>
+                                    <div fxflex.gt-xs="100">
+                                        <button mat-raised-button (click)="duplicateContinue(stepper)" type="button" color="accent" style="margin:2px">
+                                            Continue
+                                        </button>
+                                        <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent" style="margin:2px">
+                                            Back
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </mat-step>
+                            <!--Add Photo-->
+                            <mat-step *ngIf="!fallowbtn">
+                                <ng-template matStepLabel>Add Photo</ng-template>
+                                <app-add-photo (addClick)="addClick($event)" (removeClick)="removeImage($event)"></app-add-photo>
+
+                            </mat-step>
+                            <!--Details-->
+                            <mat-step *ngIf="!fallowbtn" [completed]="isCompleted">
+                                <ng-template matStepLabel>Details</ng-template>
+                                <div fxFlex="1 0 auto" fxLayout="column" class="mt-16">
+                                    <app-details [fields]="dynamicJsonFields" (formSubmit)="confirmDetails($event)"></app-details>
+
+
+                                    <!--{{t | json}}-->
+                                </div>
+
+                            </mat-step>
+                            <!--Submit Or Tracking-->
+                            <mat-step>
+                                <ng-template matStepLabel>{{submitstepperhead}}</ng-template>
+                                <div>
+                                    <app-submit (radioClick)="setradio($event)" [category]="requestformData.category" [lookups]="SubmitTrackLookupList" [visibility]="requestformData.visibility"></app-submit>
+                                </div>
+                                <hr>
+                                <div fxLayout="row" class="btmbtscpy" fxLayoutAlign="space-between">
+                                    <div fxflex.gt-xs="100">
+                                        Powered by <a><span class="textcolor">Simplify i3<sup>&reg;</sup></span></a>
+                                        <br>
+                                        <div>
+                                            <small>This site is protected by reCAPTCHA and the Google <a><span class="textcolor">Privacy Policy</span></a> and <a><span class="textcolor">Terms of Service</span></a> apply.</small>
+                                        </div>
+                                    </div>
+                                    <div fxflex.gt-xs="100">
+                                        <button mat-raised-button matStepperNext type="button" color="accent" style="margin:2px">
+                                            {{btnName}}
+                                        </button>
+                                        <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent" (click)="backTOPrevious()">
+                                            Back
+                                        </button>
+                                    </div>
+                                </div>
+                            </mat-step>
+                            <!--Login and Register-->
+                            <mat-step *ngIf="register&&isHideTab">
+                                <ng-template matStepLabel>Register or Sign In</ng-template>
+                                <div>
+                                    <register-signin (registerAccClick)="registerAcc($event,stepper)" (submitClick)="submit($event,stepper)"></register-signin>
+                                </div>
+
+                                <hr>
+                                <div class="btmbtscpy" fxLayout="row" fxLayoutAlign="space-between">
+                                    <div>
+                                        Powered by <a><span class="textcolor">Simplify i3<sup>&reg;</sup></span></a>
+                                        <br>
+                                        <div>
+                                            <small>This site is protected by reCAPTCHA and the Google <a><span class="textcolor">Privacy Policy</span></a> and <a><span class="textcolor">Terms of Service</span></a> apply.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-step>
+                            <!--ReCaptha-->
+                            <mat-step *ngIf="!register||loginsuc">
+                                <ng-template matStepLabel>{{submitstepperhead}} Request</ng-template>
+                                <div class="pt-16" fxLayout="row" fxLayoutAlign="center">
+                                    <div *ngIf="!isSub">
+                                        <re-captcha (resolved)="resolved($event)"
+                                                    siteKey="6Lfed_UUAAAAAHjPdBniMRPlj_fYszzJAUnig7GU">
+
+                                        </re-captcha>
+                                        <!--Deploy-->
+                                        <!--siteKey='6LetwPYUAAAAAO7qnb_K9OwWZcFN0-n8VfiATBIX'-->
+                                        <!--local-->
+                                        <!--siteKey="6Lfed_UUAAAAAHjPdBniMRPlj_fYszzJAUnig7GU"-->
+                                        <button class="w-100-p mt-16" mat-raised-button matStepperNext type="button" color="accent" (click)="submitReq()" [disabled]="!isReq">
+                                            {{tracktepperhead}} Request
+                                        </button>
+                                    </div>
+
+                                    <div *ngIf="isSub" class="text-center">
+                                        <img src="./assets/images/thumb-up.png" style="width:120px; height:auto;">
+                                        <br />
+                                        <h1>Thank you.<br /> Your request has been submitted</h1>
+                                        <button class="w-100-p" mat-raised-button type="button" color="accent" (click)="reset(stepper)">
+                                            Create another request
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="btmbtscpy" fxLayout="row" fxLayoutAlign="space-between">
+                                    <div>
+                                        Powered by <a><span class="textcolor">Simplify i3<sup>&reg;</sup></span></a>
+                                        <br>
+                                        <div>
+                                            <small>This site is protected by reCAPTCHA and the Google <a><span class="textcolor">Privacy Policy</span></a> and <a><span class="textcolor">Terms of Service</span></a> apply.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-step>
+                        </mat-horizontal-stepper>
+
+
+                    </div>
+
+                    <!-- / REACTIVE FORM EXAMPLE -->
+
+                    <div class="m-4 mat-card form-errors-model p-0 mat-elevation-z4">
+
+                        <div class="preview_head mb-24">
+                            <span>{{reportName}}</span>
+                        </div>
+
+                        <div class="">
+                            <!--<img alt="Profile Picture" *ngIf="previewUrl!=''" [src]="previewUrl" style="width:350px;height:150px" />-->
+                            <mat-carousel timings="250ms ease-in"
+                                          class="text-white"
+                                          maxWidth="auto"
+                                          proportion="25"
+                                          slides="3"
+                                          [loop]="true"
+                                          [hideArrows]="false"
+                                          [hideIndicators]="false"
+                                          [useKeyboard]="true"
+                                          [useMouseWheel]="false"
+                                          orientation="ltr">
+                                <mat-carousel-slide #matCarouselSlide
+                                                    *ngFor="let slide of urls,let i=index"
+                                                    [image]="slide"></mat-carousel-slide>
+                            </mat-carousel>
+                        </div>
+
+
+                        <div class="h4 text-italic pt-10 pl-10 pr-10 mb-4">
+                            <label class="">{{location}}</label>
+                        </div>
+
+
+                        <div *ngFor="let preview of previewData" class="pt-4 pl-10 pr-10 mt-0 mb-4">
+                            <div *ngIf="preview[preview.name]!='' && preview.type=='label'">
+                                <h3 class="text-bold m-0 border-bottom pb-4">{{preview.label}}</h3>
+                                <label class="h5 mb-4 pt-4">{{preview[preview.name]}}</label>
+                            </div>
+                            <div *ngIf="preview[preview.name]!='' && preview.type=='ul'">
+                                <div class=" border-bottom pb-4 mb-0 mt-0 text-bold h3">{{preview.label}} </div>
+                                <ul class="mt-4">
+                                    <li *ngFor="let list of preview[preview.name]">{{list.label}}</li>
+
+                                </ul>
+                            </div>
+                            <div *ngIf="preview[preview.name]!='' &&preview.type==''">
+                                <div class=" border-bottom pb-4 mb-0 mt-0 text-bold h3">{{preview.label}} </div>
+                                <label class="h5 mb-4 pt-4">{{preview[preview.name]}}</label>
+                            </div>
+
+                        </div>
+
+                        <div *ngFor="let trck of trackData" class="pt-4 pl-10 pr-10 mt-0 mb-4">
+                            <div *ngIf=" trck.controlTypeText=='textarea'">
+                                <h3 class="text-bold m-0 border-bottom pb-4">{{trck.controlLabel}}</h3>
+                                <label class="h5 mb-4 pt-4">{{trck.content}}</label>
+                            </div>
+                            <div *ngIf="trck.controlTypeText=='checkbox'">
+                                <div class=" border-bottom pb-4 mb-0 mt-0 text-bold h3">{{trck.controlLabel}} </div>
+                                <ul class="mt-4">
+                                    <li *ngFor="let list of trck.checkBoxOptions">{{list.controlLabel}}</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+
+
+                       
+                        <!--<div *ngIf="discription!=''">
+                            <h3>Description</h3>
+                            <hr />
+                            <label class="h5 mb-24">{{discription}}</label>
+                        </div>
+                        <br />
+                        <div *ngIf="listItems.length!=0">
+                            <span style="font-weight:bold">What was not picked up? </span>
+                            <hr />
+                            <ul *ngFor="let list of listItems">
+                                <li>{{list.label}}</li>
+
+                            </ul>
+                        </div>-->
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <!-- / CONTENT -->
+</div>
+
+

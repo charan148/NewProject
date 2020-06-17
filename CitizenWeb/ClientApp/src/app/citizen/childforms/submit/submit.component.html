@@ -1,0 +1,43 @@
+<h2 class="mb-4">How would you like to {{tracktepperhead}} this request?</h2>
+
+<div fxlayyout="row" fxLayoutAlign="space-between" class="message-box warning">
+
+    <div fxLayoutAlign="start center">
+        <label><span class="text-bold">Visibility: </span> {{visibility}}</label>
+    </div>
+    <div fxLayoutAlign="start center">
+        <label><span class="text-bold">Receiving Department: </span> {{category}}</label>
+    </div>
+</div>
+<div fxlayout="row">
+    <div class="hcheckbox">
+        <div class="inputGroup2 ml-0 mr-0" *ngFor="let lookup of LookupList">
+            <input type="radio" class="form-check-input" [id]="lookup.lookupDetailsId" name="materialExampleRadios" (change)="setradio(lookup.lookupDetailsDescription,lookup.lookupDetailsId)" [checked]="lookup.lookupDetailsCrossWalkValue == 'true'? true : false">
+            <label class="form-check-label" [for]="lookup.lookupDetailsId">
+                <span class="text-bold headeing5">{{lookup.lookupDetailsValue}}</span>
+                <!--<br />Your username and email will be shared with the receiving department. You will receive status updates on your request.-->
+                <br /> {{lookup.lookupDetailsLongDescription}}
+            </label>
+        </div>
+        <!--<div class="inputGroup2 ml-0 mr-0">
+            <input type="radio" class="form-check-input" id="hys" name="materialExampleRadios" (change)="setradio('hide')">
+            <label class="form-check-label" for="hys">
+                <span class="text-bold headeing5">Hide your identity</span>
+                <br />Your username and email will not be shared with the receiving department. You can still receive status updates on your request.
+            </label>
+        </div>
+        <div class="inputGroup2 ml-0 mr-0">
+            <input type="radio" class="form-check-input" id="sa" name="materialExampleRadios" (change)="setradio('submit')">
+            <label class="form-check-label" for="sa">
+                <span class="text-bold headeing5">{{submitAnony
+                }}</span>
+                <br />You will not receive status updates on your request.
+            </label>
+        </div>-->
+
+        <span>Please leave your cart at the curb and we will pick up within two business days. </span>
+        <span>If you submit this request over the weekend, we will process your request on Monday morning.</span>
+
+    </div>
+</div>
+

@@ -1,0 +1,323 @@
+
+<div class="dndPlaceholder" #placeholder></div>
+
+    <div class="m-4" fxLayout="column" fxFlex="17" fxflex.gt-xs="100">
+        <div class="panel">
+            <div class="panel-body">
+                <button type="button"
+                        *ngFor="let template of nestedList.templates"
+                        [dndType]="template.type"
+                        [dndDraggable]="{effectAllowed:'copy'}"
+                        [dndObject]="template"
+                        (dndCopied)="dnbCopied(template.id=template.id+1,template.type)"
+                        class="">
+                    {{template.label}}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="m-4" fxLayout="column" fxFlex="58" fxflex.gt-xs="100">
+        <div *ngFor="let dropzone of nestedList.dropzones;let i = index" class="row m-0">
+            <div class="dropzone box box-yellow col-12 p-0">
+                <!-- The dropzone also uses the list template -->
+
+                <div style="min-height:450px"  [dndList]="{
+                             allowedTypes: ['textbox','checkbox','dropDown','textarea','container','template']}"
+                     [dndModel]="dropzone"
+                     [dndPlaceholder]="placeholder" class="row m-0">
+
+                    <div *ngFor="let item of dropzone" class="row m-0">
+                        <container *ngIf="item.type === 'container'"
+                                   [list]="dropzone"
+                                   [model]="item"
+                                   [model1]="item"
+                                   [models]="item">
+
+                        </container>
+
+                        <div *ngIf="item.type === 'textbox'"
+                             [dndType]="item.type"
+                             [dndDraggable]
+                             (dndMoved)="removeItem(item, dropzone)"
+                             [dndObject]="item"
+                             class="col-md-12">
+                            <button (click)="rowDelete(item)" class="dltbtn text-danger" ><i class="fa fa-trash-alt"></i></button>
+                            <app-textbox class="col-12" [item]="item"></app-textbox>
+
+                        </div>
+                        <div *ngIf="item.type === 'textarea'"
+                             [dndType]="item.type"
+                             [dndDraggable]
+                             (dndMoved)="removeItem(item, dropzone)"
+                             [dndObject]="item"
+                             class="col-md-12">
+                            <button (click)="rowDelete(item)" class="dltbtn text-danger" ><i class="fa fa-trash-alt"></i></button>
+                            <app-textarea class="col-12" [item]="item"></app-textarea>
+
+                        </div>
+                        <div *ngIf="item.type === 'checkbox'"
+                             [dndType]="item.type"
+                             [dndDraggable]
+                             (dndMoved)="removeItem(item, dropzone)"
+                             [dndObject]="item"
+                             class="col-md-12">
+                            <button (click)="rowDelete(item)" class="dltbtn text-danger" ><i class="fa fa-trash-alt"></i></button>
+                            <app-checkbox class="col-12" [item]="item"></app-checkbox>
+
+                        </div>
+                        <div *ngIf="item.type === 'dropDown'"
+                             [dndType]="item.type"
+                             [dndDraggable]
+                             (dndMoved)="removeItem(item, dropzone)"
+                             [dndObject]="item"
+                             class="col-md-12">
+                            <button (click)="rowDelete(item)" class="dltbtn text-danger" ><i class="fa fa-trash-alt"></i></button>
+                            <app-dropdown class="col-12" [item]="item"></app-dropdown>
+
+                        </div>
+                        <div *ngIf="item.type === 'template'"
+                             [dndType]="item.type"
+                             [dndDraggable]
+                             (dndMoved)="removeItem(item, dropzone)"
+                             [dndObject]="item"
+                             class="col-md-12">
+                            <button (click)="rowDelete(item)"><i class="fa fa-trash-alt"></i></button>
+                            <div *ngFor="let col of item.columns">
+                                <app-textarea class="col-12" *ngIf="col.type=='textarea'" [item]="col"></app-textarea>
+                                <app-checkbox class="col-12" *ngIf="col.type=='checkbox'" [item]="col"></app-checkbox>
+                                <app-textbox class="col-12" *ngIf="col.type=='textbox'" [item]="col"></app-textbox>
+                                <div *ngIf="col.type=='label'">
+                                    <input type="text" class="form-control form_input_label" [(ngModel)]="col.label">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="m-4" fxLayout="column" fxFlex="25" fxflex.gt-xs="100">
+        <div *ngFor="let drop of previewList">
+            <div *ngIf="drop.type=='container'">
+                <div class="row">
+                    <div class="col-md-6" *ngIf="drop.columns.length!=0">
+                        <div *ngFor="let dropitem of drop.columns">
+                            <div *ngIf="dropitem.type=='textbox'">
+                                <div class="form_builder_field">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <label style="font-weight:bold">{{dropitem.value}}</label>
+                                            <input type="text" class="form-control form_input_label" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="dropitem.type=='textarea'">
+                                <div class="form_builder_field">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <label style="font-weight:bold">{{dropitem.value}}</label>
+                                            <input type="text" class="form-control form_input_label" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="dropitem.type=='checkbox'">
+                                <div class="form_builder_field">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <label style="font-weight:bold">{{dropitem.value}}</label>
+                                            <div *ngFor="let opt of dropitem.options">
+                                                <li>
+                                                    {{opt.name}}
+                                                </li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="dropitem.type=='dropDown'">
+
+                                <div class="form_builder_field">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <label style="font-weight:bold">{{dropitem.value}}</label>
+                                            <select class="form-control">
+                                                <option *ngFor="let opt of dropitem.options" value="Value">{{opt.name}}</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" *ngIf="drop.column1.length!=0">
+                        <div *ngFor="let dropite of drop.column1">
+
+                            <div *ngIf="dropite.type=='textbox'">
+                                <div class="form_builder_field">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <label style="font-weight:bold">{{dropite.value}}</label>
+                                            <input type="text" class="form-control form_input_label" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="dropite.type=='textarea'">
+                                <div class="form_builder_field">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <label style="font-weight:bold">{{dropite.value}}</label>
+                                            <input type="text" class="form-control form_input_label" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="dropite.type=='checkbox'">
+                                <div class="form_builder_field">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <label style="font-weight:bold">{{dropite.value}}</label>
+                                            <div *ngFor="let opt of dropite.options">
+                                                <li>
+                                                    {{opt.name}}
+                                                </li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="dropite.type=='dropDown'">
+
+                                <div class="form_builder_field">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <label style="font-weight:bold">{{dropite.value}}</label>
+                                            <select class="form-control">
+                                                <option *ngFor="let opt of dropite.options" value="Value">{{opt.name}}</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="drop.type=='textbox'">
+                <div class="form_builder_field">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <label style="font-weight:bold">{{drop.value}}</label>
+                            <input type="text" class="form-control form_input_label" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="drop.type=='textarea'">
+
+                <div class="form_builder_field">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <label style="font-weight:bold">{{drop.value}}</label>
+                            <textarea class="form-control form_input_label" value=""></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div *ngIf="drop.type=='checkbox'">
+
+                <div class="form_builder_field">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <label style="font-weight:bold">{{drop.value}}</label>
+                            <div *ngFor="let opt of drop.options">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input data-field="34760" type="checkbox" class="form-check-input form_input_req">{{opt.name}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div *ngIf="drop.type=='dropDown'">
+
+                <div class="form_builder_field">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <label style="font-weight:bold">{{drop.value}}</label>
+                            <select class="form-control">
+                                <option *ngFor="let opt of drop.options" value="Value">{{opt.name}}</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div *ngIf="drop.type=='template'">
+
+                <div class="form_builder_field" *ngFor="let column of drop.columns">
+                    <div *ngIf="column.type=='textbox'">
+                        <div class="form_builder_field">
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <label style="font-weight:bold">{{column.value}}</label>
+                                    <input type="text" class="form-control form_input_label" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="column.type=='textarea'">
+
+                        <div class="form_builder_field">
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <label style="font-weight:bold">{{column.value}}</label>
+                                    <textarea class="form-control form_input_label" value=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div *ngIf="column.type=='checkbox'">
+
+                        <div class="form_builder_field">
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <label style="font-weight:bold">{{column.value}}</label>
+                                    <div *ngFor="let opt of column.options">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input data-field="34760" type="checkbox" class="form-check-input form_input_req">{{opt.name}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div *ngIf="column.type=='label'">
+                        <label style="font-weight:bold" [innerHTML]="column.label"></label>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+

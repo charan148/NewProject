@@ -1,0 +1,296 @@
+<mat-tab-group class="w-100-p">
+    <mat-tab label="Reuest Template Details">
+        <ng-template mat-tab-label class="text-left">
+            <span class="fa fa-list-alt mr-1"></span>
+            Request Template
+        </ng-template>
+        <form name="requestTemplateForm" [formGroup]="requestTemplateForm" novalidate>
+        <div class="row mt-2 mb-2">
+            <div class="col-12 text-right pr-0">
+                <button mat-mini-fab title=" Save Request Template" (click)="saveRequestTemplate()" aria-label="Save Request Template" *ngIf="!isSaveHide"><i class="fas fa-save"></i><span class="d-none">Save</span></button><!--[disabled]="!requestTemplateForm.valid "-->
+                <!--<button mat-mini-fab title="Refresh" (click)="refresh()"  aria-label="Refresh"><i class="fas fa-redo"></i><span class="d-none">Refresh</span></button>-->
+                <button mat-mini-fab title="Cancel" (click)="closeRequestTemplate()" aria-label="Cancel"><i class="fas fa-times"></i><span class="d-none">Cancel</span></button>
+
+            </div>
+        </div>
+        <div> 
+            <mat-form-field appearance="outline" fxFlex="100">
+                <mat-label>Request Name</mat-label>
+                <input matInput placeholder="Request Name" formControlName="RequestName" autocomplete="off"
+                       [(ngModel)]="RequestObj.requestName"  (input)="requestNameChange(requestTemplateForm.get('RequestName'))" required> <!-- [disabled]="disablefields"-->
+                <mat-error *ngIf="requestTemplateForm.get('RequestName').hasError('required')">
+                     Request Name is required..
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" fxFlex="100">
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="Description" formControlName="RequestDescription" autocomplete="off"
+                       [(ngModel)]="RequestObj.requestDescription" ><!--  [disabled]="disablefields" #requestDescription="ngModel"-->
+                <mat-error *ngIf="requestTemplateForm.get('RequestDescription').hasError('required')">
+                    Request Description is required..
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxlayout="column" fxfill="50" fxfill.xs="100" fxlayoutalign="space-between">
+            <mat-form-field appearance="outline" fxFlex="100">
+                <mat-label>Display Type</mat-label>
+                <mat-select matInput class="w-100-p cstmslctpdng  pl-1 pr-1" formControlName="RequestDisplayType" [(ngModel)]="selectedDisplayOption" [disabled]="disablefields">
+                    <mat-option *ngFor="let display of displayType" [value]="display.lookupDetailsId">
+                        {{display.lookupDetailsValue}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="requestTemplateForm.get('RequestDisplayType').errors?.required">
+                    Request Display Type is required..
+                </mat-error>
+
+            </mat-form-field>
+        </div>
+        <div fxlayout="column" fxfill="50" fxfill.xs="100" fxlayoutalign="space-between">
+            <mat-form-field appearance="outline" fxFlex="100">
+                <mat-label>Visibility</mat-label>
+                <mat-select matInput class="w-100-p cstmslctpdng  pl-1 pr-1" formControlName="visibility" [(ngModel)]="selectedvisibilityOption">
+
+                    <!--[disabled]="disablefields"-->
+                    <mat-option *ngFor="let visible of Visibility" [value]="visible.lookupDetailsId">
+                        {{visible.lookupDetailsValue}}
+                    </mat-option>
+
+                </mat-select>
+                <mat-error *ngIf="requestTemplateForm.get('visibility').errors?.required">
+                    Visibility is required..
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxlayout="column" fxfill="50" fxfill.xs="100" fxlayoutalign="space-between">
+            <mat-form-field appearance="outline" fxFlex="100">
+                <mat-label>Category</mat-label>
+                <mat-select matInput class="w-100-p cstmslctpdng  pl-1 pr-1" formControlName="category" [(ngModel)]="selectedCategoryOption">
+                    <!--[disabled]="disablefields"-->
+                    <mat-option *ngFor="let cate of category" [value]="cate.requestCategoryId">
+                        {{cate.requestCategory}}
+                    </mat-option>
+
+                </mat-select>
+                <mat-error *ngIf="requestTemplateForm.get('category').errors?.required">
+                    Category is required..
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxlayout="column" fxfill="50" fxfill.xs="100" fxlayoutalign="space-between">
+            <mat-form-field appearance="outline" fxFlex="100">
+                <mat-label>Priority</mat-label>
+                <mat-select matInput class="w-100-p cstmslctpdng  pl-1 pr-1" formControlName="priority" [(ngModel)]="selectedpriorityOption">
+                    <!--[disabled]="disablefields"-->
+                    <mat-option *ngFor="let priority of Priority" [value]="priority.lookupDetailsId">
+                        {{priority.lookupDetailsValue}}
+                    </mat-option>
+
+                </mat-select>
+                <mat-error *ngIf="requestTemplateForm.get('priority').errors?.required">
+                    Priority is required..
+                </mat-error>
+            </mat-form-field>
+        </div>
+        </form>
+    </mat-tab>
+    <mat-tab label="Designer">
+
+        <div class="row m-0 h-100-p">
+            <div class="col-12 p-0">
+                <div class="dndPlaceholder" #placeholder2></div>
+
+                <div class="m-4 " fxFlex="17" fxflex.gt-xs="100">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <button type="button"
+                                    draggable="true"
+                                    (mousedown)="dragArea()"
+                                    (dragend)="mouseupevent()"
+                                    *ngFor="let template of nestedList.templates"
+                                    [dndType]="template.type"
+                                    [dndDraggable]="{effectAllowed:'copy'}"
+                                    [dndObject]="template"
+                                    (dndCopied)="dnbCopied(template.id=template.id+1,template.type)"
+                                    class="">
+                                {{template.controlName}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-4 scrllpge" fxFlex="58" fxflex.gt-xs="100">
+                    <div *ngFor="let dropzone of nestedList.dropzones;let i = index" class="row m-0">
+                        <div class="dropzone box box-yellow col-12 p-0" contentEditable=false data-text="Enter text here">
+                            <div id="cstmDiv" [dndList]="{
+                             allowedTypes: ['textbox','checkbox','dropdown','textarea','layout','template','label','radiobutton']}"
+                                 [dndModel]="dropzone"
+                                 [dndPlaceholder]="placeholder2" class="row m-0">
+                                <div id='cstDivs' *ngFor="let item of dropzone" class="row m-0 mb-10">
+                                    <container class="containerpnl" *ngIf="item.type === 'layout'"
+                                               [list]="dropzone"
+                                               [model]="item"
+                                               [model1]="item"
+                                               [models]="item">
+                                    </container>
+                                    <div *ngIf="item.type === 'textbox'"
+                                         [dndType]="item.type"
+                                         [dndDraggable]
+                                         (dndMoved)="removeItem(item, dropzone)"
+                                         [dndObject]="item"
+                                         class="col-md-12 p-0">
+                                        <button (click)="rowDelete(item)" class="dltbtn text-danger"><span class="material-icons">delete</span></button>
+                                        <app-textbox class="col-12" [item]="item" chkpre="drop"></app-textbox>
+                                    </div>
+                                    <div *ngIf="item.type === 'textarea'"
+                                         [dndType]="item.type"
+                                         [dndDraggable]
+                                         (dndMoved)="removeItem(item, dropzone)"
+                                         [dndObject]="item"
+                                         class="col-md-12 p-0">
+                                        <button (click)="rowDelete(item)" class="dltbtn text-danger"><span class="material-icons">delete</span></button>
+                                        <app-textarea class="col-12" [item]="item" chkpre="drop"></app-textarea>
+                                    </div>
+                                    <div *ngIf="item.type === 'checkbox'"
+                                         [dndType]="item.type"
+                                         [dndDraggable]
+                                         (dndMoved)="removeItem(item, dropzone)"
+                                         [dndObject]="item"
+                                         class="col-md-12 p-0">
+                                        <button (click)="rowDelete(item)" class="dltbtn text-danger"><span class="material-icons">delete</span></button>
+                                        <app-checkbox class="col-12" [item]="item" chkpre="drop"></app-checkbox>
+                                    </div>
+                                    <div *ngIf="item.type === 'dropdown'"
+                                         [dndType]="item.type"
+                                         [dndDraggable]
+                                         (dndMoved)="removeItem(item, dropzone)"
+                                         [dndObject]="item"
+                                         class="col-md-12 p-0">
+                                        <button (click)="rowDelete(item)" class="dltbtn text-danger"><span class="material-icons">delete</span></button>
+                                        <app-dropdown class="col-12" [item]="item" chkpre="drop"></app-dropdown>
+                                    </div>
+                                    <div *ngIf="item.type === 'radiobutton'"
+                                         [dndType]="item.type"
+                                         [dndDraggable]
+                                         (dndMoved)="removeItem(item, dropzone)"
+                                         [dndObject]="item"
+                                         class="col-md-12 bg-white">
+                                        <button (click)="rowDelete(item)" class="dltbtn text-danger"><span class="material-icons">delete</span></button>
+                                        <app-radio class="col-12" [item]="item" chkpre="drop"></app-radio>
+                                    </div>
+                                    <div *ngIf="item.type === 'label'"
+                                         [dndType]="item.type"
+                                         [dndDraggable]
+                                         (dndMoved)="removeItem(item, dropzone)"
+                                         [dndObject]="item"
+                                         class="form_builder_field fieldbox col-12 bg-white mt-0 mb-0">
+                                        <button (click)="rowDelete(item)" class="dltbtn text-danger"><span class="material-icons">delete</span></button>
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div>
+                                                    <mat-form-field appearance="outline" fxFlex="100">
+                                                        <mat-label>Label Content</mat-label>
+                                                        <input matInput type="text" autocomplete="off" [(ngModel)]="item.label" />
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="item.type === 'template'"
+                                         [dndType]="item.type"
+                                         [dndDraggable]
+                                         (dndMoved)="removeItem(item, dropzone)"
+                                         [dndObject]="item"
+                                         class="col-md-12 bg-white mb-2 p-0">
+                                        <button (click)="rowDelete(item)" class="dltbtn text-danger"><span class="material-icons">delete</span></button>
+                                        <app-template class="col-12" [item]="item" chkpre="drop"></app-template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-16 m-4 bg-white scrllpge" fxFlex="25" fxflex.gt-xs="100">
+                    <div *ngFor="let drop of previewList">
+                        <div *ngIf="drop.type=='layout'">
+                            <div class="row m-0">
+                                <div class="col-md-6 pl-0 pr-05" *ngIf="drop.columns.length!=0">
+                                    <div *ngFor="let dropitem of drop.columns">
+                                        <div *ngIf="dropitem.type=='textbox'">
+                                            <app-textbox class="col-12" [item]="dropitem" chkpre="preview"></app-textbox>
+                                        </div>
+                                        <div *ngIf="dropitem.type=='textarea'">
+                                            <app-textarea class="col-12" [item]="dropitem" chkpre="preview"></app-textarea>
+                                        </div>
+                                        <div *ngIf="dropitem.type=='checkbox'">
+                                            <app-checkbox class="col-12" chkpre="preview" [item]="dropitem"></app-checkbox>
+                                        </div>
+                                        <div *ngIf="dropitem.type=='dropdown'">
+                                            <app-dropdown class="col-12" [item]="dropitem" chkpre="preview"></app-dropdown>
+                                        </div>
+                                        <div *ngIf="dropitem.type=='radiobutton'">
+                                            <app-radio class="col-12" [item]="dropitem" chkpre="preview"></app-radio>
+                                        </div>
+                                        <div *ngIf="dropitem.type=='label'">
+                                            <mat-form-field appearance="outline" fxFlex="100">
+                                                <input matInput type="text" autocomplete="off" [(ngModel)]="dropitem.label" />
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pr-0 pl-05" *ngIf="drop.column1.length!=0">
+                                    <div *ngFor="let dropite of drop.column1">
+                                        <div *ngIf="dropite.type=='textbox'">
+                                            <app-textbox class="col-12" [item]="dropite" chkpre="preview"></app-textbox>
+                                        </div>
+                                        <div *ngIf="dropite.type=='textarea'">
+                                            <app-textarea class="col-12" [item]="dropite" chkpre="preview"></app-textarea>
+                                        </div>
+                                        <div *ngIf="dropite.type=='checkbox'">
+                                            <app-checkbox class="col-12" chkpre="preview" [item]="dropite"></app-checkbox>
+                                        </div>
+                                        <div *ngIf="dropite.type=='dropdown'">
+                                            <app-dropdown class="col-12" [item]="dropite" chkpre="preview"></app-dropdown>
+                                        </div>
+                                        <div *ngIf="dropite.type=='radiobutton'">
+                                            <app-radio class="col-12" [item]="dropite" chkpre="preview"></app-radio>
+                                        </div>
+                                        <div *ngIf="dropite.type=='label'">
+                                            <mat-form-field appearance="outline" fxFlex="100">
+                                                <input matInput type="text" autocomplete="off" [(ngModel)]="dropite.label" />
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="drop.type=='textbox'" class="row ml-0 mr-0">
+                            <app-textbox class="col-12 p-0" [item]="drop" chkpre="preview"></app-textbox>
+                        </div>
+                        <div *ngIf="drop.type=='textarea'" class="row ml-0 mr-0">
+                            <app-textarea class="col-12 p-0" [item]="drop" chkpre="preview"></app-textarea>
+                        </div>
+                        <div *ngIf="drop.type=='checkbox'" class="row ml-0 mr-0">
+                            <app-checkbox class="col-12 p-0" chkpre="preview" [item]="drop"></app-checkbox>
+                        </div>
+                        <div *ngIf="drop.type=='label'" class="row ml-0 mr-0">
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <input matInput type="text" autocomplete="off" [(ngModel)]="drop.label" />
+                            </mat-form-field>
+                        </div>
+                        <div *ngIf="drop.type=='dropdown'" class="row ml-0 mr-0">
+                            <app-dropdown class="col-12 p-0" [item]="drop" chkpre="preview"></app-dropdown>
+                        </div>
+                        <div *ngIf="drop.type=='radiobutton'" class="row ml-0 mr-0">
+                            <app-radio class="col-12 p-0" [item]="drop" chkpre="preview"></app-radio>
+                        </div>
+                        <div *ngIf="drop.type=='template'" class="row ml-0 mr-0 mb-10">
+                            <app-template class="col-12 p-0" [item]="drop" chkpre="preview"></app-template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,49 @@
+<div class="divspace">
+    <h3 *ngIf="urls.length==0">Please add a photo to help us and respond effectively. It helps us better understand your request.</h3>
+</div>
+<div class="flex-img">
+    <div *ngFor="let url of urls,let i=index">
+        <div class="imgdivcls">
+            <img [src]="url.ImageUrl">
+            <a class="clobtn" mat-button color="accent" (click)="removeImage(url)">
+                <mat-icon>close</mat-icon>
+            </a>
+        </div>
+    </div>
+    <div class="image" fxlayout="row wrap" *ngIf="isUpload">
+        <label for="imagefiles" class="label">
+            <mat-icon class="mr-4">image</mat-icon>Upload
+        </label>
+    </div>
+    <div class="downimage" fxlayout="row wrap" *ngIf="DownUpload">
+        <label for="imagefiles" class="label">
+            <mat-icon class="mr-4">image</mat-icon>Upload
+        </label>
+
+    </div>
+</div>
+
+<input id="imagefiles" style="visibility:hidden" multiple #browse type="file" name="image" accept='image/*' (click)="uploadClick()" (change)="fileProgress($event)" />
+<hr>
+<div fxLayout="row" class="btmbtscpy" fxLayoutAlign="space-between">
+    <div fxflex.gt-xs="100">
+        Powered by <a><span class="textcolor">Simplify i3<sup>&reg;</sup></span></a>
+        <br>
+        <div>
+            <small>This site is protected by reCAPTCHA and the Google <a><span class="textcolor">Privacy Policy</span></a> and <a><span class="textcolor">Terms of Service</span></a> apply.</small>
+        </div>
+    </div>
+    <div fxflex.gt-xs="100">
+        <button mat-raised-button matStepperNext type="button" color="accent" style="margin:2px">
+            Continue
+        </button>
+        <button mat-raised-button matStepperNext type="button" *ngIf="urls.length==0" color="accent" style="margin:2px">
+            Skip
+        </button>
+
+
+        <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent" style="margin:2px">
+            Back
+        </button>
+    </div>
+</div>

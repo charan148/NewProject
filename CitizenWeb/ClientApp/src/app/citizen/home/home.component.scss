@@ -1,0 +1,195 @@
+@import "src/@fuse/scss/fuse";
+
+
+#list_land {
+
+    .top-bg {
+        height: 164px;
+
+        @include media-breakpoint('lt-md') {
+            height: 256px;
+        }
+
+        
+    }
+    > .accent {
+        background: #00529b ;
+        background: -webkit-gradient(linear, left top, right top, from(#00529b), to(#00529b));
+        background: linear-gradient(to right, #00529b 0%, #00529b 100%);
+    }
+
+    > .center {
+       
+
+        > .header {
+            height: 90px !important;
+    min-height: 90px !important;
+    max-height: 90px !important;
+
+            .search-wrapper {
+                width: 50%;
+                max-width: 400px;
+                border-radius: 28px;
+                overflow: hidden;
+                @include mat-elevation(1);
+
+                @include media-breakpoint('xs') {
+                    width: 100%;
+                }
+
+                .search {
+                    width: 100%;
+                    height: 48px;
+                    line-height: 48px;
+
+                    input {
+                        width: 100%;
+                        height: 48px;
+                        min-height: 48px;
+                        max-height: 48px;
+                        padding: 0 16px;
+                        border: none;
+                        outline: none;
+                    }
+
+                    .mat-icon {
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                        fill: currentColor;
+                        height: auto;
+                        width: auto;
+                        padding: 15px;
+                        background: #0059d4;
+                        color: #fff;
+                    }
+                }
+            }
+
+            @include media-breakpoint('lt-md') {
+                padding: 8px 0;
+                height: 192px !important;
+                min-height: 192px !important;
+                max-height: 192px !important;
+            }
+        }
+        .content-card {
+            background: none;
+        }
+    }
+}
+
+.list_land_list {
+    flex: 1 1 auto;
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    .courses {
+        width: 100%;
+        margin: 0 auto;
+
+        .no-courses {
+            font-size: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .course {
+            padding: 10px;
+            background: #fff;
+
+            &:hover {
+                .course-content {
+                    border: 1px solid #ddd;
+                    @include mat-elevation(12);
+                }
+                .footer {
+                    background: #00529b;
+                    button {
+                        color: #fff !important;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .course-content {
+                min-height: 240px;
+                border-radius: 4px;
+                border: 1px solid #ddd;
+                overflow: hidden;
+                transition: box-shadow 200ms ease-in-out;
+                @include mat-elevation(1);
+
+                .header {
+                    padding: 10px;
+                    height: 64px !important;
+                    min-height: 64px !important;
+                    max-height: 64px !important;
+
+                    &.web-bg {
+                        background: #0059d4;
+                    }
+
+                    &.android-bg {
+                        background: mat-color($mat-green, 500);
+                    }
+
+                    &.firebase-bg {
+                        background: mat-color($mat-amber, 800);
+                    }
+
+                    &.cloud-bg {
+                        background: mat-color($mat-blue-grey, 500);
+                    }
+
+                    .category {
+                        
+                        text-align: left;
+                        font-weight: 600;
+                        color: #fff;
+                        font-size: 15px;
+                    }
+
+                    .length {
+
+                        .length-icon {
+                            margin-right: 8px;
+                        }
+
+                        .min {
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                .content {
+                    padding: 24px;
+
+                    .h1 {
+                        font-size: 14px;
+                        text-align: left;
+                    }
+
+                    .updated {
+                        font-size: 13px;
+                        font-weight: 600;
+                        margin-top: 4px;
+                    }
+                }
+
+                .footer {
+                    padding: 0px;
+                    height: 48px !important;
+                    min-height: 48px !important;
+                    max-height: 48px !important;
+                    box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.12);
+                    font-weight: 600; 
+                    button {
+                        width: 100%; 
+                        color: #00529b;
+                        font-weight: bold;                                             
+                    }
+                }
+            }
+        }
+    }
+}

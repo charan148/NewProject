@@ -1,0 +1,105 @@
+<div id="list_land" class="page-layout carded fullwidth inner-scroll">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+    <!-- CENTER -->
+    <div class="center">
+
+        <!-- HEADER -->
+        <div class="header"
+             fxLayout="column" fxLayoutAlign="center center"
+             fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="space-between center">
+            <!-- SEARCH -->
+            <div></div>
+            <div class="search-wrapper mx-32 mx-md-0">
+                <div class="search" fxFlex fxLayout="row" fxLayoutAlign="start center">
+                    <input #filter placeholder="Search for a Request" (input)="filterCoursesByTerm()" [(ngModel)]="searchTerm">
+                    <mat-icon>search</mat-icon>
+                </div>
+            </div>
+            <!-- / SEARCH -->
+        </div>
+        <!-- / HEADER -->
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+            <div class="list_land_list" fusePerfectScrollbar>
+              
+                
+
+                <div fxLayout="column" fxLayoutAlign="right">
+
+
+                    <div class="courses" fxLayout="row wrap" fxLayoutAlign="left" [@animateStagger]="{value:'50'}">
+        
+                        <div class="course" *ngFor="let rep of reports" fxFlex="100" fxFlex.gt-xs="50"
+                             fxFlex.gt-sm="25" [ngClass]="web" [@animate]="{value:'*',params:{y:'100%'}}">
+        
+                            <div class="course-content" fxLayout="column" fxFlex="1 1 auto">
+        
+                                <div class="header" fxLayout="row" fxLayoutAlign="center center"  [ngClass]="'web-bg'">
+         <div class="category" fxFlex>     {{rep.reportName}} </div>
+        
+        
+                                </div>
+        
+                                <div class="content" fxLayout="column" fxLayoutAlign="left top" fxFlex="1 1 auto"> <div class="h1">{{rep.issue}}</div> 
+                                </div>
+        
+                                <div class="footer" fxLayout="row" fxLayoutAlign="center center"> <button mat-button color="accent" (click)="report(rep.reportName)"     routerLink="/citizen/requestform">     REPORT 
+                                    <span></span><span></span><span></span><span></span>
+                                </button>
+                                </div>
+        
+                            </div>
+        
+                        </div>
+                    </div>
+        
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <!-- / CONTENT CARD -->
+    </div>
+    <!-- / CENTER -->
+</div>
+
+
+
+<div id="authentication" class="page-layout carded fullwidth inner-scroll">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+    <div class="center">
+    <!-- HEADER -->
+    <div class="header accent"
+    fxLayout="column" fxLayoutAlign="center center"
+    fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="space-between center">
+
+  
+   <!-- SEARCH -->
+   <div class="search-wrapper mx-32 mx-md-0">
+    <div class="search" fxFlex fxLayout="row" fxLayoutAlign="start center">
+        <input #filter placeholder="Search for a product">
+        <mat-icon>search</mat-icon>
+    </div>
+</div>
+   <!-- / SEARCH -->
+
+</div>
+<!-- / HEADER -->
+    </div>
+
+    <div class="content p-24">
+
+       
+
+    </div> -->
+    <!-- / CONTENT -->
+
+</div>

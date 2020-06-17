@@ -1,0 +1,52 @@
+
+.dndPlaceholder {
+    background-color: #fff;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 2px dotted #00529b;
+    position: relative;
+    padding: 15px;
+}
+
+.containerpnl {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    background: #fff;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.cstmDivs {
+}
+
+.panel {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #c6c6c6;
+
+    .panel-body {
+        width: 100%;
+
+        button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            background: #00529b;
+            color: #fff;
+
+            &:hover {
+                background: #0059d4;
+            }
+        }
+    }
+}
+.mat-tab-body-wrapper {
+    height: 100%;
+}

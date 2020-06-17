@@ -1,0 +1,169 @@
+E:\EPIC\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+E:\EPIC\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+E:\EPIC\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+E:\EPIC\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+E:\EPIC\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+E:\EPIC\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+E:\EPIC\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+E:\EPIC\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+E:\EPIC\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+E:\EPIC\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+E:\EPIC\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CoreCompileInputs.cache
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CoreCompileInputs.cache
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+D:\Latest solution\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+D:\Latest solution\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+D:\Latest solution\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+D:\Latest solution\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\Latest solution\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\Latest solution\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+D:\Latest solution\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CoreCompileInputs.cache
+D:\Latest solution\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+D:\Latest solution\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+D:\Latest solution\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+D:\Latest solution\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+D:\Latest solution\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+C:\citizen_update@26\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+C:\citizen_update@26\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+C:\citizen_update@26\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+C:\citizen_update@26\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+C:\citizen_update@26\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+C:\citizen_update@26\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+C:\citizen_update@26\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+C:\citizen_update@26\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+C:\citizen_update@26\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+C:\citizen_update@26\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+C:\citizen_update@26\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+F:\CTWB\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+F:\CTWB\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+F:\CTWB\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+F:\CTWB\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+F:\CTWB\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+F:\CTWB\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+F:\CTWB\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+F:\CTWB\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+F:\CTWB\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CoreCompileInputs.cache
+F:\CTWB\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+F:\CTWB\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+F:\CTWB\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+C:\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+C:\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+C:\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+C:\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+C:\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+C:\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+C:\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+C:\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+C:\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+C:\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+C:\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+F:\CitizenWebNewSolution\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.deps.json
+F:\CitizenWebNewSolution\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+F:\CitizenWebNewSolution\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb
+F:\CitizenWebNewSolution\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+F:\CitizenWebNewSolution\citizen\CitizenWeb.DAL\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+F:\CitizenWebNewSolution\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csprojAssemblyReference.cache
+F:\CitizenWebNewSolution\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfoInputs.cache
+F:\CitizenWebNewSolution\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.AssemblyInfo.cs
+F:\CitizenWebNewSolution\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.csproj.CopyComplete
+F:\CitizenWebNewSolution\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.dll
+F:\CitizenWebNewSolution\citizen\CitizenWeb.DAL\obj\Debug\netcoreapp3.1\CitizenWeb.DAL.pdb

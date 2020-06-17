@@ -1,0 +1,13 @@
+<div class="form-group row" [formGroup]="form">
+
+    <div class="col-md-12" [ngSwitch]="field.type">
+        <app-textarea *ngSwitchCase="'textarea'" [field]="field" [form]="form" [chkpages]="chkpages"></app-textarea>
+
+        <app-checkbox *ngSwitchCase="'checkbox'" [field]="field" [form]="form" [chkpages]="chkpages"></app-checkbox>
+        <app-label *ngSwitchCase="'label'" [field]="field" [form]="form" [chkpages]="chkpages"></app-label>
+        <app-text *ngSwitchCase="'textbox'" [field]="field" [form]="form" [chkpages]="chkpages"></app-text>
+        <app-dropdown *ngSwitchCase="'dropdown'" [field]="field" [form]="form" [chkpages]="chkpages"></app-dropdown>
+        <app-radio *ngSwitchCase="'radiobutton'" [field]="field" [form]="form" [chkpages]="chkpages"></app-radio>
+
+    </div>
+</div>

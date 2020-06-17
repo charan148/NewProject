@@ -1,0 +1,122 @@
+<!-- 
+<div id="login" class="inner-scroll w-100-p" fxLayout="row" fxLayoutAlign="center center mt-24">
+    <div id="login-form">
+
+
+        <form name="loginForm" [formGroup]="loginForm" novalidate>
+            <div fxLayout="row wrap pb-10" fxLayoutAlign="center center">
+                <img src="assets/images/logos/cityoforlando_large.png" style="height:50px; width:auto;">
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="space-between">
+                <div fxFlex="50" fxLayout="column" class="pr-10 pt-20">
+                    <mat-form-field class="w-100-p" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" [(ngModel)]="email" (blur)="emailChange($event.currentTarget.value)">
+                        <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                            Email is required
+                        </mat-error>
+                        <mat-error *ngIf="!loginForm.get('email').hasError('required') &&
+                                loginForm.get('email').hasError('email')">
+                            Please enter a valid email address
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayoutAlign="end end" fxFlex="50" fxLayout="column" class="pl-10">
+                    <mat-form-field class="w-100-p" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" [(ngModel)]="pwd" formControlName="password" (blur)="pwdChange($event.currentTarget.value)">
+                        <mat-error>
+                            Password is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayout.xs="column"
+                 fxLayoutAlign="end center">
+                <a class="forgot-password mr-8" (click)="forgotClick()">
+                    Forgot Your Password?
+                </a>
+                <button mat-raised-button color="accent" class="submit-button" aria-label="LOGIN"
+                        (click)="submit()">
+                    Sign In
+                </button>
+            </div>
+
+        </form>
+        <hr />
+        <div class="register" fxLayout="column" fxLayoutAlign="center center">
+            Don't have an account? <a class="link" [routerLink]="'/apps/citizenweb/register'">Create an account</a>
+        </div>
+    </div>
+</div> -->
+
+
+<div id="login" fxLayout="column">
+
+    <div id="login-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+        <div id="login-form" [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+
+            <div class="logo">
+                <img src="assets/images/logos/cityoforlando_large.png">
+            </div>
+
+            <div class="title">LOGIN TO YOUR ACCOUNT</div>
+
+            <form name="loginForm" [formGroup]="loginForm" novalidate>
+                <mat-form-field class="w-100-p" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" [(ngModel)]="email" (blur)="emailChange($event.currentTarget.value)" autocomplete="off">
+                    <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                        Email is required
+                    </mat-error>
+                    <mat-error *ngIf="!loginForm.get('email').hasError('required') &&
+                            loginForm.get('email').hasError('email')">
+                        Please enter a valid email address
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="w-100-p" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" [(ngModel)]="pwd" formControlName="password" (blur)="pwdChange($event.currentTarget.value)" autocomplete="off">
+                    <mat-error>
+                        Password is required
+                    </mat-error>
+                </mat-form-field>
+
+                <div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column"
+                     fxLayoutAlign="end center">
+
+                     <a class="forgot-password mr-8" (click)="forgotClick()">
+                        Forgot Password?
+                    </a>
+                </div>
+
+                <button mat-raised-button color="accent" class="submit-button" aria-label="LOGIN"
+                        (click)="submit()" [disabled]="!loginForm.valid">
+                    Login
+                </button>
+
+            </form>
+           
+
+            <div class="register" fxLayout="column" fxLayoutAlign="center center">
+                <span class="text">Don't have an account?</span>
+                <a class="link" [routerLink]="'/authentication/register'">Create an account</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+

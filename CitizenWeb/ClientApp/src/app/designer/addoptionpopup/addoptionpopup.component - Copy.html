@@ -1,0 +1,72 @@
+<mat-tab-group>
+    <mat-tab label="Lookups">
+        <div fxlayout="row" fxlayoutalign="center">
+            <div fxlayout="row" fxlayoutalign="middle end">
+                <button class=" btn btn-primary text-white mt-2 " mat-mini-fab title="Save" (click)="lookupsave()">save</button>
+                <button class="btn btn-primary text-white  mt-2 " mat-mini-fab title="Cancel" [mat-dialog-close]="" cdkFocusInitial>close</button>
+            </div>
+            <div fxlayout="row" fxlayoutalign="space-between">
+                <div fxlayout="column" fxfill="50" fxfill.xs="100" fxlayoutalign="space-between">
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>Lookup Group</mat-label>
+                        <mat-select matInput class="w-100-p cstmslctpdng  pl-1 pr-1" [(ngModel)]="selectedOption" (ngModelChange)="lookupchange()">
+                            <mat-option *ngFor="let opt of dropDownData" [value]="opt.lookupId">
+                                {{opt.lookupName}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxlayout="column" fxfill="50" fxfill.xs="100" fxlayoutalign="space-between">
+                    <h3 class="bg-primary text-white mt-1 pl-1 pr-1 pb-1 pt-1">Lookup Details</h3>
+                    <div class="mb-0 order_pop">
+                        <div *ngFor="let opt of options">
+                            {{opt.lookupDetailsDescription}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="New Lookup">
+        <!--<mat-form-field appearance="outline" fxFlex="100">
+        <mat-label>Lookup Group Name</mat-label>
+        <input matInput type="text" autocomplete="off" required [(ngModel)]="groupName" />
+    </mat-form-field>-->
+        <button class="btn btn-primary text-white mt-2 mr-1" [disabled]="!lookupform.valid" (click)="savelookupDetails()">Save Details</button>
+        <form name="form" #lookupform="ngForm">
+            <mat-form-field appearance="outline" fxFlex="100">
+                <mat-label>Lookup  Name</mat-label>
+                <input matInput type="text" autocomplete="off" name="lookupName" id="lookupName" #lookupName="ngModel" (blur)="lookupBlurEvent()" [(ngModel)]="DesignerLookup.lookupName" required />
+                <mat-error *ngIf="distinctLookupName">Lookup Name already exists</mat-error>
+            </mat-form-field>
+           
+
+            <!--<mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Lookup Description</mat-label>
+            <input matInput type="text" autocomplete="off" name="lookupDescription" id="lookupDescription" #lookupDescription="ngModel"  [(ngModel)]="Lookupobj.lookupDescription" required/>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Lookup Short Description</mat-label>
+            <input matInput type="text" autocomplete="off"  name="lookupShortDescription" id="lookupShortDescription" #lookupShortDescription="ngModel" [(ngModel)]="Lookupobj.lookupShortDescription"  required />
+        </mat-form-field>-->
+        </form>
+        <br />
+       
+        <div *ngFor="let detail of newLookup;let i= index ">
+            
+            <mat-form-field appearance="outline" fxFlex="100">
+                <mat-label>Lookup Details Name</mat-label>
+                <input matInput type="text" autocomplete="off" required [(ngModel)]="detail.LookupDetailsValue" />
+                <mat-error *ngIf="detail.error">Lookup Details Name required</mat-error>
+            </mat-form-field>
+                <button *ngIf="i!=newLookup.length-1" class="btn btn-primary text-white mt-2  " style="margin:5px" (click)="removeDetails(detail)"><span class="material-icons">delete</span></button>
+                <button *ngIf="i==newLookup.length-1" class="btn btn-primary text-white mt-2  " style="margin:5px" (click)="addDetails()"><span class="material-icons">add</span></button>
+                <!--<mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Lookup Description </mat-label>
+            <input matInput type="text" autocomplete="off" required [(ngModel)]="detail.value" />
+        </mat-form-field>-->
+        </div>
+
+
+    </mat-tab>
+</mat-tab-group>

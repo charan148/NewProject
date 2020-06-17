@@ -1,0 +1,47 @@
+<div class="form_builder_field fieldbox" *ngIf="chkpre=='drop'">
+    <div class="row layoutm">
+        <div class="col-md-12 layoutp">
+            <div>
+                <mat-form-field appearance="outline" fxFlex="100">
+                    <mat-label>DropDown Label</mat-label>
+                    <input matInput type="text" autocomplete="off" [(ngModel)]="item.label" />
+                </mat-form-field>
+                <div class="row">
+                    <span *ngIf="item.valid" class="text-danger input_alert_txt">Drop down Label is required.</span>
+                </div>
+            </div>
+            <div *ngIf="item.templateControlOptions.length!=0">
+                <mat-form-field appearance="outline" fxFlex="100">
+                    <mat-select matInput [(ngModel)]="selectedOption">
+                        <mat-option *ngFor="let opt of item.templateControlOptions" [value]="opt.label">
+                            {{opt.label}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <button class="btn btn-primary text-white mt-2" (click)="addOptions(item)">Add Options</button>
+            </div>
+            <div *ngIf="item.required">
+                <mat-form-field appearance="outline" fxFlex="100">
+                    <mat-label>Error Message</mat-label>
+                    <input matInput type="text" autocomplete="off" [(ngModel)]="item.errormsg" />
+                </mat-form-field>
+            </div>
+            <mat-checkbox (change)="checkChange(item,$event)" [(ngModel)]="item.required" [checked]="item.required">Required</mat-checkbox>
+        </div>
+
+    </div>
+</div>
+<div *ngIf="chkpre=='preview'">  
+    <div>
+        <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>{{item.label}}</mat-label>
+            <mat-select matInput [(ngModel)]="selectedOption" >
+                <mat-option *ngFor="let opt of item.templateControlOptions" [value]="opt.label">
+                    {{opt.label}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>

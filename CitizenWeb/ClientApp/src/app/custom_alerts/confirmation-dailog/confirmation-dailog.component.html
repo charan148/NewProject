@@ -1,0 +1,21 @@
+<div mat-dialog-title class="mb-0" *ngIf ="actionNameTitle">
+  <div class="row ml-0 mr-0">
+    <div class="col-12 p-0">
+      <div class="h3 float-left text-white">{{actionNameTitle}}</div>
+    </div>
+  </div>
+</div>
+<!--<div class="modal-body">
+  {{ message }}
+</div>-->
+<div class="modal-body pb-5 pt-2 pl-5">
+  <div class="row ml-0 mr-0">
+    <div class="col-md-12 text-center mt-3">
+      <span class="h3 text-center"> {{ message }}</span>
+    </div>
+    <div class="col-md-12 text-center mt-2 ">
+      <button class="btn btn-success text-white button_radius_10" id="BtnOk" title="{{ buttonTitle }}" (click)="accept()">{{ buttonTitle }}</button>
+      <button class="btn btn-danger text-white button_radius_10" title="{{ btnCancelText }}" (click)="decline()">{{ btnCancelText }}</button>
+    </div>
+  </div>
+</div>

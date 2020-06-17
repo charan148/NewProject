@@ -1,0 +1,41 @@
+<div class="form_builder_field fieldbox" *ngIf="chkpre=='drop'">
+    <div class="row layoutm">
+        <div class="col-md-12 layoutp">
+            <div>
+                <mat-form-field appearance="outline" fxFlex="100">
+                    <mat-label>CheckBox Label</mat-label>
+                    <input matInput type="text" autocomplete="off" [(ngModel)]="item.label" />
+                </mat-form-field>
+                <div class="row">
+                <span *ngIf="item.valid" class="text-danger input_alert_txt">Please select atleast one Check Box</span>
+                </div>
+            </div>
+            <div *ngIf="item.templateControlOptions.length!=0" fxlayout="row" fxlayoutalign="space-between" class="template_checkboxgroup">
+                <div *ngFor="let opt of item.templateControlOptions" fxlayout="column" fxFlex="33" fxflex.gt-xs="100" class="template_checkbox">
+                    <div>
+                        <mat-checkbox>{{opt.label}}</mat-checkbox>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button class="btn btn-primary text-white mt-2" (click)="addOptions(item)">Add Options</button>
+            </div>
+            <div *ngIf="item.required">
+                <mat-form-field appearance="outline" fxFlex="100">
+                    <mat-label>Error Message</mat-label>
+                    <input matInput type="text" autocomplete="off" [(ngModel)]="item.errormsg" />
+                </mat-form-field>
+            </div>
+            <mat-checkbox (change)="checkChange(item,$event)" [(ngModel)]="item.required" [checked]="item.required">Required</mat-checkbox>
+        </div>
+    </div>
+</div>
+<div *ngIf="chkpre=='preview'">
+    <mat-label>{{item.label}}</mat-label>
+    <div *ngIf="item.templateControlOptions.length!=0">
+        <div *ngFor="let opt of item.templateControlOptions" class="template_checkbox">
+            <mat-checkbox>{{opt.label}}</mat-checkbox>
+        </div>
+    </div>
+</div>

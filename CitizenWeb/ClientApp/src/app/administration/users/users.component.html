@@ -1,0 +1,72 @@
+
+<div class="row ml-0 mr-0">
+    <div class="col-12 pt-3">
+        <div class="col-8 float-left pl-0">
+            <button mat-mini-fab (click)="CreateNewUser()" *ngIf="createUserButton" title="Add New User" aria-label="Add New User"><i class="fa fa-plus"></i><span class="d-none">Add</span></button>
+            <button mat-mini-fab (click)="editUser()" *ngIf="editUserButton" aria-label="Edit User" title="Edit User"><i class="fa fa-pencil-alt" title="Edit User"></i><span class="d-none">Edit</span></button>
+            <button mat-mini-fab (click)="viewUser()" *ngIf="viewUserButton" aria-label="User Details" title="User Details"><i class="fa fa-eye" title="User Details" ></i><span class="d-none">View</span></button>
+            <button mat-mini-fab (click)="deleteUser()" *ngIf="deleteUserButton" aria-label="Delete User" title="Delete User"><i class="fa fa-trash" title="Delete User"></i><span class="d-none">Delete</span></button>
+            <button mat-mini-fab (click)="refresh()" aria-label="Refresh" title="Refresh"><i class="fa fa-repeat" title="Refresh"></i><span class="d-none">Refresh</span></button>
+           
+        </div>
+
+        <mat-form-field class="col-4 float-left pr-0">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" aria-label="Filter" [(ngModel)]="filteruser" name="filteruser" value="filteruser">
+        </mat-form-field>
+       
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <!-- Checkbox Column -->
+            <ng-container matColumnDef="select">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef width="80px">
+                    <mat-checkbox (change)="$event ? masterToggle() : null" aria-label="Check Uncheck"
+                                  [checked]="selection.hasValue() && isAllSelected()"
+                                  [indeterminate]="selection.hasValue() && !isAllSelected()">
+                        
+                    </mat-checkbox>
+                </th>
+                <td tabindex="0" mat-cell *matCellDef="let row" class="mat-data">
+                    <mat-checkbox (click)="[$event.stopPropagation(), row.highlighted = !row.highlighted] "
+                                  (change)="$event ? selection.toggle(row) : null" aria-label="Check Uncheck"
+                                  [checked]="selection.isSelected(row)">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <!-- UserName Column -->
+            <ng-container matColumnDef="userName">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                <td tabindex="0" mat-cell *matCellDef="let row"> {{row.userName}} </td>
+            </ng-container>
+
+            <!-- FirstName Column -->
+            <ng-container matColumnDef="firstName">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+                <td tabindex="0" mat-cell *matCellDef="let row"><a tabindex="0" (click)="userclick(row.userId)"> {{row.firstName}}</a> </td>
+            </ng-container>
+
+            <!-- lastName Column -->
+            <ng-container matColumnDef="lastName">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+                <td tabindex="0" mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+            </ng-container>
+
+            <!-- emailAddress Column -->
+            <ng-container matColumnDef="emailAddress">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                <td tabindex="0" mat-cell *matCellDef="let row"> {{row.emailAddress}} </td>
+            </ng-container>
+           
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{hovered: mat-row.hovered}"
+                (click)="[selection.toggle(row), row.highlighted = !row.highlighted] " (mouseover)="row.hovered = true" (mouseout)="row.hovered = false" [ngStyle]="{'background-color':selection.isSelected(row) ? '#ffead4' : 'white'}">
+            </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+
+    </div>
+
+</div>
+

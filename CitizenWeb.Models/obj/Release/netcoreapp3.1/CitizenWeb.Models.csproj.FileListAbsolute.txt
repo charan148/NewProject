@@ -1,0 +1,17 @@
+F:\CTWB\CitizenWeb\CitizenWeb.Models\bin\Release\netcoreapp3.1\CitizenWeb.Models.deps.json
+F:\CTWB\CitizenWeb\CitizenWeb.Models\bin\Release\netcoreapp3.1\CitizenWeb.Models.dll
+F:\CTWB\CitizenWeb\CitizenWeb.Models\bin\Release\netcoreapp3.1\CitizenWeb.Models.pdb
+F:\CTWB\CitizenWeb\CitizenWeb.Models\obj\Release\netcoreapp3.1\CitizenWeb.Models.csprojAssemblyReference.cache
+F:\CTWB\CitizenWeb\CitizenWeb.Models\obj\Release\netcoreapp3.1\CitizenWeb.Models.csproj.CoreCompileInputs.cache
+F:\CTWB\CitizenWeb\CitizenWeb.Models\obj\Release\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+F:\CTWB\CitizenWeb\CitizenWeb.Models\obj\Release\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+F:\CTWB\CitizenWeb\CitizenWeb.Models\obj\Release\netcoreapp3.1\CitizenWeb.Models.dll
+F:\CTWB\CitizenWeb\CitizenWeb.Models\obj\Release\netcoreapp3.1\CitizenWeb.Models.pdb
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\bin\Release\netcoreapp3.1\CitizenWeb.Models.deps.json
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\bin\Release\netcoreapp3.1\CitizenWeb.Models.dll
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\bin\Release\netcoreapp3.1\CitizenWeb.Models.pdb
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\obj\Release\netcoreapp3.1\CitizenWeb.Models.csprojAssemblyReference.cache
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\obj\Release\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\obj\Release\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\obj\Release\netcoreapp3.1\CitizenWeb.Models.dll
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\obj\Release\netcoreapp3.1\CitizenWeb.Models.pdb

@@ -1,0 +1,164 @@
+<div id="forms" class="page-layout carded left-sidebar inner-sidebar inner-scroll detailspg">
+    <!-- / TOP BACKGROUND -->
+    <!-- CENTER -->
+    <div class="center ml-0 mr-0">
+        <!-- CONTENT HEADER -->
+        <div class="toolbar pagebreadcrumb px-24 py-8">
+            <div fxLayout="column" fxLayoutAlign="center start">
+                <div class="h1">Lookup Details</div>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-12 text-right pr-0">
+
+                <button mat-mini-fab title="Save" (click)="SaveLookup()" [disabled]="!lookupform.valid" *ngIf="!savebuttondisable"><i class="fas fa-save"></i><span class="d-none">Save</span></button>
+                <button mat-mini-fab (click)="refresh()" title="Refresh" *ngIf="!resetbuttonhide"><i class="fas fa-redo"></i><span class="d-none">Refresh</span></button>
+                <button mat-mini-fab (click)="close()" title="Cancel"><i class="fas fa-times"></i><span class="d-none">Cancel</span></button>
+            </div>
+        </div>
+        <!-- / CONTENT HEADER -->
+        <!-- CONTENT CARD -->
+        <div class="content-card rounded-0 noneboxshadow bg-none pr-16 pl-16" fusePerfectScrollbar>
+            <mat-card class="p-0 mb-3 pb-3">
+                <mat-card-header>
+                    <mat-card-title class="mb-0">Lookup Details</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="pt-2">
+                    <form name="form" #lookupform="ngForm">
+                        <div class="row ml-0 mr-0">
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                    <input matInput placeholder="Lookup Name" name="lookupName" id="lookupName" #lookupName="ngModel" [(ngModel)]="Lookupobj.lookupName" [disabled]="disablefields" required>
+                                    <mat-error [hidden]="lookupName.valid">Lookup Name is required</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                   
+                                    <input matInput placeholder="Lookup  Description" name="lookupDescription" id="lookupDescription" #lookupDescription="ngModel" [(ngModel)]="Lookupobj.lookupDescription" [disabled]="disablefields" required>
+                                    <mat-error [hidden]="lookupDescription.valid">Lookup Description is required</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                    <input matInput placeholder="Lookup Long Description" #lookupLongDescription="ngModel" name="lookupLongDescription" id="lookupLongDescription" [(ngModel)]="Lookupobj.lookupLongDescription" [disabled]="disablefields" [ngModelOptions]="{standalone: true}">
+                                   
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row ml-0 mr-0">
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                   
+                                    <input matInput placeholder="Lookup Short Description" name="lookupShortDescription" id="lookupShortDescription" #lookupShortDescription="ngModel" [(ngModel)]="Lookupobj.lookupShortDescription" [disabled]="disablefields" required>
+                                    <mat-error [hidden]="lookupShortDescription.valid">Lookup Short Description is required</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                    <input matInput placeholder="Lookup Display Description" [(ngModel)]="Lookupobj.lookupDisplayDescription" #lookupDisplayDescription="ngModel" name="lookupDisplayDescription" id="lookupDisplayDescription" [disabled]="disablefields" [ngModelOptions]="{standalone: true}">
+                                   
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-checkbox [(ngModel)]="Lookupobj.isUsedInDisplay" id="isUsedInDisplay" name="isUsedInDisplay" [ngModelOptions]="{standalone: true}" [disabled]="disablefields">Is Used In Display?</mat-checkbox>
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0">
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                    <input matInput [matDatepicker]="pickerfrom" [max]="Lookupobj.effectiveTo" (dateInput)="startDateChange(effectiveFrom.value)" placeholder="Effective From" #effectiveFrom="ngModel" name="effectiveFrom" id="effectiveFrom" [(ngModel)]="Lookupobj.effectiveFrom" [ngModelOptions]="{standalone: true}" [disabled]="disablefields">
+                                    <mat-datepicker-toggle matSuffix [for]="pickerfrom"></mat-datepicker-toggle>
+                                    <mat-datepicker #pickerfrom></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                    <input matInput [matDatepicker]="picker" placeholder="Effective To" [min]="Lookupobj.effectiveFrom" (dateInput)="endDateChange(effectiveTo.value)" #effectiveTo="ngModel" name="effectiveTo" id="effectiveTo" [(ngModel)]="Lookupobj.effectiveTo" [ngModelOptions]="{standalone: true}" [disabled]="disablefields">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                    <mat-label>Status</mat-label>
+                                    <mat-select class="w-100-p cstmslctpdng" [(ngModel)]="Lookupobj.rowStatus" name="rowStatus" [ngModelOptions]="{standalone: true}" [disabled]="disablefields">
+                                        <mat-option *ngFor="let status of StatusList" [value]="status.value">
+                                            {{status.value}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error></mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+
+
+
+            <mat-card class="p-0 mb-3 pb-3" *ngIf="!disable">
+                <mat-card-content class="pt-2">
+                    <div class="row ml-0 mr-0">
+                        <div class="col-8 float-left">
+                            <button mat-mini-fab (click)="addLookUpDetails()" title="Add" [hidden]='hidefooter' *ngIf="!disable"><i class="fa fa-plus"></i><span class="d-none">add</span></button>
+                            <button mat-mini-fab (click)="editLookUpDetails()" title="Edit" [hidden]='hidefooter' *ngIf="!disable"><i class="fas fa-pencil-alt"></i><span class="d-none">edit</span></button>
+                            <button mat-mini-fab (click)="viewLookup()" title="View" show="viewdisable"><i class="fa fa-eye"></i><span class="d-none">view</span></button>
+                            <button mat-mini-fab (click)="deleteLookUpDetails()" title="Delete" [hidden]='hidefooter' *ngIf="!disable"><i class="fas fa-trash-alt"></i><span class="d-none">delete</span></button>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item>Export All Columns</button>
+                                <button mat-menu-item>Export Visible Columns</button>
+                            </mat-menu>
+                        </div>
+                        <mat-form-field class="col-4 float-left">
+                            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" [(ngModel)]="filterName" name="filterName" value="filterName">
+                        </mat-form-field>
+                    </div>
+                    <div class="row ml-0 mr-0">
+                        <div class="col-12">
+                            <table mat-table [dataSource]="dataSource" matSort>
+
+                                <!-- Checkbox Column -->
+                                <ng-container matColumnDef="select">
+                                    <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef width="80px">
+                                        <mat-checkbox tabindex="0" aria-label="Check Uncheck All" (change)="$event ? masterToggle() : null"
+                                                      [checked]="selection.hasValue() && isAllSelected()"
+                                                      [indeterminate]="selection.hasValue() && !isAllSelected()">
+                                        </mat-checkbox>
+                                    </th>
+                                    <td tabindex="0" mat-cell *matCellDef="let row" class="mat-data">
+                                        <mat-checkbox tabindex="0" aria-label="Check Uncheck" (click)="$event.stopPropagation()"
+                                                      (change)="$event ? selection.toggle(row) : null"
+                                                      [checked]="selection.isSelected(row)">
+                                        </mat-checkbox>
+                                    </td>
+                                </ng-container>
+
+                                <!-- Lookup Details Value -->
+                                <ng-container matColumnDef="lookupDetailsValue">
+                                    <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header aria-label="Lookup Details Value" title="Lookup Details Value"> Lookup Details Value </th>
+                                    <td tabindex="0" mat-cell *matCellDef="let row" attr.aria-label="{{row.lookupDetailsValue}}" title="{{row.lookupDetailsValue}}"> {{row.lookupDetailsValue}} </td>
+                                </ng-container>
+
+                                <!-- lookup Details Description -->
+                                <ng-container matColumnDef="lookupDetailsDescription">
+                                    <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef mat-sort-header title="Lookup Details Description" aria-label="Lookup Details Description"> Lookup Details Description </th>
+                                    <td tabindex="0" mat-cell *matCellDef="let row" title="{{row.lookupDetailsDescription}}" attr.aria-label="{{row.lookupDetailsDescription}}"> {{row.lookupDetailsDescription}} </td>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+
+                            <mat-paginator [pageSizeOptions]="[10]"></mat-paginator>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+            <!-- / CONTENT CARD -->
+        </div>
+    </div>
+    <!-- / CENTER -->
+</div>
+

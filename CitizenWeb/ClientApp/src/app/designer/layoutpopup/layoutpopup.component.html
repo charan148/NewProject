@@ -1,0 +1,22 @@
+<div class="row ml-0 mr-0 fieldbox">
+    <div class="col col-md-auto mr-auto">
+       
+
+    </div>
+</div>
+<div class="border" *ngFor="let loyout of Layouts" style="margin:5px">
+    <label>
+        <span class="font-weight-bold">{{loyout.label}}</span>
+        <input type="radio" name="test" value="small" [checked]="loyout.checked" (change)="layOutChange(loyout.label)">
+        <img [src]="loyout.imagesrc">
+    </label>
+</div>
+<div class="text-right mt-1">
+    <!--<button style="margin:5px" class="button" (click)="sameTemplate()">Use Same Template</button>-->
+    <!--<button style="margin:5px" class="button" (click)="modifyTemplate()">Modify Template</button>-->
+    <button class="btn btn-primary text-white mr-1" (click)="removeuseTemplate()">Reset and Append</button>
+    <button class="btn btn-primary text-white mr-1" (click)="appendTemplate()">Append</button>
+    <button class="btn btn-primary text-white mr-1" title="Cancel" [mat-dialog-close]="" cdkFocusInitial>Close</button>
+</div>
+
+

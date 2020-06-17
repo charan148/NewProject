@@ -1,0 +1,148 @@
+
+<div fxlayyout="row" class="message-box warning mb-4 mt-16" *ngIf="similarRequestsList!=undefined && similarRequestsList!=null ">
+    <h3 class="mb-4 mt-0"><b>We found {{similarRequestsList.length}}  requests similar to your current request.</b></h3>
+    <h5 class="mt-4 mb-0"><b>Your location and request category match the following nearby request(s). Click on <span><b>Follow</b></span>  to stay informed on the matching request or Click on <span><b>Continue </b></span>to proceed with your request</b></h5>
+</div>
+<div fxLayout="row" fxlayoutalign="stretch">
+    <div fxFlex="40">
+        <div fxLayout="column">
+            <pagination-controls  class="text-right" (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
+<!--| paginate: config"-->
+<div class="fuse-card mt-4" *ngFor="let similarrequest of similarRequestsList| paginate: { itemsPerPage: 5, currentPage: p }">
+    <div fxLayout="row wrap">
+        <div fxFlex="30" fxLayout="column">
+            <mat-carousel timings="250ms ease-in"
+                          class="text-white"
+                          maxWidth="auto"
+                          proportion="25"
+                          [loop]="true"
+                          [hideArrows]="false"
+                          [hideIndicators]="false"
+                          [useKeyboard]="true"
+                          [useMouseWheel]="false"
+                          orientation="ltr">
+                <mat-carousel-slide #matCarouselSlide
+                                    *ngFor="let slide of similarrequest.requestPhotos,let i=index"
+                                    [image]="slide.imageUrl"></mat-carousel-slide>
+            </mat-carousel>
+        </div>
+        <div fxFlex="70" fxLayout="column" class="pl-16">
+            <div class="border-bottom" fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column">
+                    <div class="h2 text-bold" fxLayout="row">{{similarrequest.requestTemplateName}}</div>
+                    <label class="mat-body-1 pt-4 text-italic">Issue Raised at {{similarrequest.createdDateText}}</label>
+                    <label class="mat-body-1 pt-4 text-italic"><b>Location: </b>{{similarrequest.requestLocation.location}}</label>
+                </div>
+                <div fxLayout="column">
+                    <button mat-raised-button (click)="follow(similarrequest.requestTransactionId)" type="button" color="accent" style="margin:2px">
+                        Follow
+                    </button>
+                    <div fxFlex="40" class="text-right">
+                        <div fxLayout="column inline">
+                            <label class="text-boxed text-italic {{similarrequest.color}}"><span class="text-bold">Status : </span> {{similarrequest.requestStatusText}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngFor="let control of similarrequest.controls">
+                <!--*ngFor-->
+               
+
+                <div *ngIf="control.controlTypeText == 'textarea'">
+                    <div fxLayout="row" fxlayoutalign="stretch">
+                        <h3 class="text-bold heading2 mb-4 mt-0" fxFlex="60">{{control.controlLabel}}</h3>
+                    </div>
+                    <div fxLayout="row" falayoutalign="left center">
+                        <label class="h5 mb-0">{{control.content}}</label>
+                    </div>
+                    <div class="border-bottom mt-4 pt-4 mb-4 pb-4"></div>
+
+
+
+                </div>
+
+                <div *ngIf="control.controlTypeText=='checkbox'">
+
+                    <div fxLayout="row" falayoutalign="left center">
+                        <h3 class="text-bold heading2 mb-4 mt-4">{{control.controlLabel}}</h3>
+                    </div>
+
+                    <div fxLayout="row" falayoutalign="left center">
+                        <label class="radius_label_info mr-8" *ngFor="let opt of control.checkBoxOptions">{{opt.controlLabel}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="card mt-4">
+    <div class="card-preview">
+        <div class="fuse-card mb-4">
+            <div fxLayout="row wrap">
+                <div fxFlex="30" fxLayout="column">
+                    <img src="./assets/uploadedimages/dsc_0429.jpg">
+                    <img src="E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb\ClientApp\src\UploadedImages\1.jpg" />
+                </div>
+                <div fxFlex="30" fxLayout="column">
+                    <mat-carousel timings="250ms ease-in"
+                                  class="text-white"
+                                  maxWidth="auto"
+                                  proportion="25"
+                                  slides="3"
+                                  [loop]="true"
+                                  [hideArrows]="false"
+                                  [hideIndicators]="false"
+                                  [useKeyboard]="true"
+                                  [useMouseWheel]="false"
+                                  orientation="ltr">
+                        <mat-carousel-slide #matCarouselSlide
+                                            *ngFor="let slide of urls,let i=index"
+                                            [image]="slide"></mat-carousel-slide>
+                    </mat-carousel>
+                </div>
+                <div fxFlex="70" fxLayout="column" class="pl-16 pb-10">
+                    <div class="pb-10 border-bottom" fxLayout="row" fxLayoutAlign="space-between">
+                        <div fxLayout="column">
+                            <div class="h2 text-bold" fxLayout="row">{{reportName}}</div>
+                            <label class="mat-body-1 pt-4 text-italic">Issue Raised at 02-04-2020 14:30</label>
+                            <label class="mat-body-1 pt-4 text-italic"><b>Location: </b>{{location}}</label>
+                        </div>
+                        <div fxLayout="column">
+                            <button mat-raised-button (click)="follow()" type="button" color="accent" style="margin:2px">
+                                Follow
+                            </button>
+                            <div fxFlex="40" class="text-right">
+                                <div fxLayout="column inline">
+                                    <label class="text-boxed green-bg text-italic"><span class="text-bold">Status : </span> Completed</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="pt-10" fxlayoutalign="stretch">
+                        <h3 class="text-bold heading2 mb-4 mt-0" fxFlex="60">Description</h3>
+
+                    </div>
+                    <div fxLayout="row" falayoutalign="left center">
+                        <label class="h5 mb-0">please pick up the dump material at our location</label>
+                    </div>
+                    <div class="border-bottom mt-4 pt-4 mb-4 pb-4"></div>
+                    <div fxLayout="row" falayoutalign="left center">
+                        <h3 class="text-bold heading2 mb-4 mt-4">What was not picked up?</h3>
+                    </div>
+                    <div fxLayout="row" falayoutalign="left center">
+                        <label class="radius_label_info mr-8">Garbage</label>
+                        <label class="radius_label_info mr-8">Recycling</label>
+                        <label class="radius_label_info mr-8" *ngIf="!multichek">Yard Waste</label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>-->

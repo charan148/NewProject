@@ -1,0 +1,28 @@
+<div [formGroup]="form" *ngIf="chkpages=='details'">
+    <div [formGroupName]="field.name">
+        <span style="font-weight:bold">{{field.label}}</span>
+        <div class="hcheckbox">
+
+            <div *ngFor="let opt of field.templateControlOptions" class="inputGroup ml-0">
+                <input [formControlName]="opt.key" id="{{opt.key}}" type="checkbox" style="margin:5px" [value]="opt.value" (change)="opt.change(opt.key,form,opt.label,field.name,'check')" />
+                <label for="{{opt.key}}" class="mat-subheading-1">{{opt.label}}</label>
+            </div>
+        </div>
+        <div *ngIf="field.errormsg">
+            <label for="lblError" style="color:red;">Please check any one from above options.</label>
+        </div>
+    </div>
+</div>
+
+<div [formGroup]="form" *ngIf="chkpages=='requestDetails'">
+    <div>
+        <span style="font-weight:bold">{{field.label}}</span>
+        <div class="hcheckbox">
+
+            <div *ngFor="let opt of field.checkBoxOptions" class="inputGroup ml-0">
+                <input  id="{{opt.key}}" [name]="opt.key" type="checkbox" style="margin:5px" [checked]="opt.value" (change)="opt.change(opt.key,form,opt.label,field.name)" [disabled]="true"/>
+                <label for="{{opt.key}}" class="mat-subheading-1">{{opt.label}}</label>
+            </div>
+        </div>
+    </div>
+</div>

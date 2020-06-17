@@ -1,0 +1,116 @@
+<div id="forms" class="page-layout carded left-sidebar inner-sidebar inner-scroll detailspg">
+
+    <!-- / TOP BACKGROUND -->
+    <!-- CENTER -->
+    <div class="center ml-0 mr-0">
+        <!-- CONTENT HEADER -->
+        <div class="toolbar pagebreadcrumb px-24 py-8">
+            <div fxLayout="column" fxLayoutAlign="center start">
+                <div class="h1">User Details</div>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-12 text-right pr-0">
+                <button mat-mini-fab title="Save User" (click)="saveUser()" [disabled]="!userForm.valid " *ngIf="!disable" aria-label="Save User"><i class="fas fa-save"></i><span class="d-none">Save</span></button>
+                <button mat-mini-fab title="Refresh" (click)="refresh()" *ngIf="!disable" aria-label="Refresh"><i class="fas fa-redo"></i><span class="d-none">Refresh</span></button>
+                <button mat-mini-fab title="Cancel" (click)="closeUser()" aria-label="Cancel"><i class="fas fa-times"></i><span class="d-none">Cancel</span></button>
+
+            </div>
+        </div>
+        <!-- / CONTENT HEADER -->
+        <!-- CONTENT CARD -->
+        <div class="content-card rounded-0 noneboxshadow bg-none pr-16 pl-16" fusePerfectScrollbar>
+
+            <mat-card class="p-0 mb-3 pb-3">
+                <mat-card-header>
+                    <mat-card-title tabindex="0" class="mb-0">User Details</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="pt-2">
+                    <form [formGroup]="userForm">
+                        <div class="row ml-0 mr-0">
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                    <input type="text" matInput placeholder="First name" formControlName="FirstName" [disabled]="disable" required maxlength="100" (input)="firstNameChange(userForm.get('FirstName'))">
+                                    <mat-error *ngIf="userForm.get('FirstName').errors?.required">
+                                        First Name is required..
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                    <input type="text" matInput placeholder="Last Name" formControlName="LastName" [disabled]="disable" required maxlength="100" (input)="lastNameChange(userForm.get('LastName'))">
+                                    <mat-error *ngIf="userForm.get('LastName').errors?.required">
+                                        Last Name is required..
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                    <input type="text" matInput placeholder="User Name" formControlName="UserName" [readonly]="isReadOnly" [disabled]="disable" required maxlength="100" (input)="userNameChange(userForm.get('UserName'))">
+                                    <mat-error *ngIf="userForm.get('UserName').errors?.required">
+                                        User Name is required..
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row ml-0 mr-0 align-items-end">
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                    <input matInput placeholder="Email" formControlName="EmailAddress" [disabled]="disable" [(ngModel)]="EmailAddress" autocomplete="off" required type="email" [formControl]="emailFormControl" maxlength="200">
+                                    <mat-error *ngIf="emailFormControl.invalid">
+                                        Email Address is required..
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="w-100-p">
+                                    <input matInput placeholder="Phone" type="tel" [textMask]="{mask: mask,guide: true}" formControlName="PhoneNumber" autocomplete="off" [disabled]="disable" [formControl]="phoneFormControl">
+                                    <mat-error *ngIf="phoneFormControl.invalid">Phone Number is invalid..</mat-error>
+                                </mat-form-field>
+                            </div>
+                           
+                        </div>
+
+                        <div class="row ml-0 mr-0">
+                            <div class="col-12">
+                                <mat-card class="p-0 mb-3 pb-3">
+                                    <mat-card-header>
+                                        <mat-card-title tabindex="0" class="mb-0">Change Pasword</mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content class="pt-2">
+                                        <div class="row ml-0 mr-0">
+                                            <div class="col-md-4">
+                                                <mat-form-field class="w-100-p">
+                                                    <input type="password" matInput placeholder="Password" formControlName="Password" autocomplete="off" [disabled]="disable" [(ngModel)]="Password" required maxlength="225" (input)="passwordChange(userForm.get('Password'),userForm.get('ConfirmPassword'))">
+                                                    <mat-error *ngIf="userForm.get('Password').errors?.required">
+                                                        Password is required..
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <mat-form-field class="w-100-p">
+                                                    <input type="password" matInput placeholder="Confirm password" formControlName="ConfirmPassword" required maxlength="225" autocomplete="off">
+                                                    <mat-error *ngIf="userForm.get('ConfirmPassword').errors?.MatchPassword">Password does not match</mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </mat-card-content>
+                                </mat-card>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </mat-card-content>
+            </mat-card>
+
+
+            <!-- / CONTENT CARD -->
+        </div>
+    </div>
+    <!-- / CENTER -->
+</div>
+
+
+
+

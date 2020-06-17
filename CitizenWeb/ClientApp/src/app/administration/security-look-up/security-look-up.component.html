@@ -1,0 +1,46 @@
+<div mat-dialog-title class="mb-0">
+    <div class="row ml-0 mr-0">
+        <div class="col-12 pl-0 pr-0">
+            <div class="h2 float-left text-black">Add User</div>
+        </div>
+    </div>
+</div>
+<div class="row ml-0 mr-0">
+    <div class="col-8 float-left pt-2">
+        <button class="btn btn-primary" (click)="SaveUsersPopup()" title="Save User"><em class="fa fa-save"></em> Save</button>
+        <button class="btn btn-primary" [mat-dialog-close]="true" title="Cancel" cdkFocusInitial><em class="fa fa-times"></em> Cancel</button>
+    </div>
+    <div class="col-4 ml-auto">
+        <mat-form-field class="w-100-p">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search" title="Search" autocomplete="off">
+        </mat-form-field>
+    </div>
+</div>
+
+    <div class="col-12 ml-auto">
+        <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="checkbox">
+                <th scope="col" tabindex="0" mat-header-cell *matHeaderCellDef width="80px">
+                    <mat-checkbox tabindex="0" aria-label="Check Uncheck all" (change)="$event ? masterToggle() : null"
+                                  [checked]="selection.hasValue() && isAllSelected()"
+                                  [indeterminate]="selection.hasValue() && !isAllSelected()">
+                    </mat-checkbox>
+                </th>
+                <td tabindex="0" mat-cell *matCellDef="let row" class="mat-data">
+                    <mat-checkbox tabindex="0" aria-label="Check Uncheck" (click)="[$event.stopPropagation(), row.highlighted = !row.highlighted] "
+                                  (change)="$event ? selection.toggle(row) : null"
+                                  [checked]="selection.isSelected(row)">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="UserName">
+                <th scope="col" tabindex="0" title="User Name" aria-lable="User Name" mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                <td tabindex="0" title="{{row.UserName}}" attr.aria-lable="{{row.UserName}}" mat-cell *matCellDef="let row"> {{row.UserName}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{hovered: mat-row.hovered}"
+                (click)="[selection.toggle(row), row.highlighted = !row.highlighted] " (mouseover)="row.hovered = true" (mouseout)="row.hovered = false" [ngStyle]="{'background-color':selection.isSelected(row) ? '#d2ffeb' : 'white'}"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+        </div>
+

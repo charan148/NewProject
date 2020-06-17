@@ -1,0 +1,144 @@
+<div id="register" fxLayout="column" class="inner-scroll">
+
+    <div id="register-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+        <div id="register-form" [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+
+            <div class="logo">
+                <img src="assets/images/logos/cityoforlando_large.png">
+            </div>
+
+            <div class="title">CREATE AN ACCOUNT</div>
+
+            <form name="registerForm" [formGroup]="registerForm" novalidate>
+
+                <div fxLayout="row wrap" fxLayoutAlign="space-between">
+                    <mat-form-field class="pl-4 pr-4" appearance="outline" fxFlex="100" fxFlex.gt-sm="50">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="firstName" autocomplete="off">
+                        <mat-error *ngIf="registerForm.get('firstName').hasError('required')">
+                            First Name is required
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="pl-4 pr-4" appearance="outline" fxFlex="100" fxFlex.gt-sm="50">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="lastName" autocomplete="off">
+                        <mat-error *ngIf="registerForm.get('lastName').hasError('required')">
+                            Last Name is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="space-between">
+                    <mat-form-field class="pl-4 pr-4" appearance="outline" fxFlex="100" fxFlex.gt-sm="50">
+                        <mat-label>User Name</mat-label>
+                        <input matInput formControlName="userName" autocomplete="off">
+                        <mat-error *ngIf="registerForm.get('userName').hasError('required')">
+                            User Name is required
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="pl-4 pr-4" appearance="outline" fxFlex="100" fxFlex.gt-sm="50">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="emailAddress" autocomplete="off">
+                        <mat-error *ngIf="registerForm.get('emailAddress').hasError('required')">
+                            Email is required
+                        </mat-error>
+                        <mat-error *ngIf="!registerForm.get('emailAddress').hasError('required') &&
+                                        registerForm.get('emailAddress').hasError('email')">
+                            Please enter a valid email address
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="space-between">
+                    <mat-form-field class="pl-4 pr-4" appearance="outline" fxFlex="100" fxFlex.gt-sm="50">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" formControlName="Password" autocomplete="off" required maxlength="225" (input)="passwordChange(userForm.get('Password'),userForm.get('ConfirmPassword'))">
+                        <mat-error *ngIf="registerForm.get('Password').hasError('required')">
+                            Password is required
+                        </mat-error>
+                        <!--<mat-error *ngIf="!registerForm.get('passwordConfirm').hasError('required') &&
+               registerForm.get('passwordConfirm').hasError('passwordsNotMatching')">
+            Passwords must match
+        </mat-error>-->
+                    </mat-form-field>
+                    <mat-form-field class="pl-4 pr-4" appearance="outline" fxFlex="100" fxFlex.gt-sm="50">
+                        <mat-label>Confirm Password</mat-label>
+                        <input type="password" matInput placeholder="Confirm password" formControlName="ConfirmPassword" required maxlength="225" autocomplete="off">
+                        <mat-error *ngIf="registerForm.get('ConfirmPassword').errors?.MatchPassword">Password does not match</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="pl-4 pr-4" appearance="outline" fxFlex="100" fxFlex.gt-sm="50">
+                        <mat-label>Phone Number</mat-label>
+                        <input matInput formControlName="phoneNumber" autocomplete="off">
+                        <mat-error *ngIf="registerForm.get('phoneNumber').hasError('required')">
+                            Phone Number is required
+                        </mat-error>
+                        <mat-error *ngIf="!registerForm.get('phoneNumber').hasError('required') &&
+                                        registerForm.get('phoneNumber').hasError('pattern')">
+                            Please, Enter 10 digit mobile number
+                        </mat-error>
+                    </mat-form-field>
+                    <!--<mat-form-field class="pl-4 pr-4" appearance="outline" fxFlex="100" fxFlex.gt-sm="50">
+        <mat-label>Password Confirmation</mat-label>
+        <input matInput type="password" formControlName="passwordConfirm">
+    </mat-form-field>-->
+                </div>
+                <mat-form-field class="pl-4 pr-4 w-100-p" appearance="outline">
+                    <mat-label>Nearest intersection to your home or work</mat-label>
+                    <input matInput type="text">
+                    <!--formControlName="nearestHome"-->
+                </mat-form-field>
+                <div class="cstmmap" fxLayout="row wrap" fxLayoutAlign="center center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.9543538533944!2d-81.38068808505365!3d28.541091694964773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77afe775c318f%3A0xfe725ffe0a44fc34!2s121%20S%20Orange%20Ave%2C%20Orlando%2C%20FL%2032801%2C%20USA!5e0!3m2!1sen!2sin!4v1589274503328!5m2!1sen!2sin" frameborder="0" style="border:0; margin-top: -150px; width: 100%; height: 250px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+
+                <div class="terms" fxLayout="row" fxLayoutAlign="center center">
+                    <mat-checkbox name="terms" aria-label="I read and accept" required>
+                        <span>I agree to the</span>
+                    </mat-checkbox>
+                    <a href="#">terms and conditions</a>
+                </div>
+                <!--<div fxLayout="row wrap" fxLayoutAlign="space-between">
+                    <mat-form-field class="pl-4 pr-4" appearance="outline" fxFlex="100" fxFlex.gt-sm="50">
+                        <mat-label>Phone Number</mat-label>
+                        <input matInput formControlName="phoneNumber">
+                        <mat-error>
+                            Phone Number is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>-->
+
+                <!--<mat-form-field class="pl-4 pr-4 w-100-p" appearance="outline">
+                    <mat-label>Nearest intersection to your home or work</mat-label>
+                    <input matInput type="text" formControlName="nearestHome">
+                </mat-form-field>-->
+                <!--<div class="cstmmap" fxLayout="row wrap" fxLayoutAlign="center center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.9543538533944!2d-81.38068808505365!3d28.541091694964773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77afe775c318f%3A0xfe725ffe0a44fc34!2s121%20S%20Orange%20Ave%2C%20Orlando%2C%20FL%2032801%2C%20USA!5e0!3m2!1sen!2sin!4v1589274503328!5m2!1sen!2sin" frameborder="0" style="border:0; margin-top: -150px; width: 100%; height: 250px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+
+                <div class="terms" fxLayout="row" fxLayoutAlign="center center">
+                    <mat-checkbox name="terms" aria-label="I read and accept" required>
+                        <span>I agree to the</span>
+                    </mat-checkbox>
+                    <a href="#">terms and conditions</a>
+                </div>-->
+
+                <button mat-raised-button color="accent" class="submit-button" aria-label="CREATE AN ACCOUNT" [disabled]="!registerForm.valid"
+                        (click)="register()">
+                    Create an Account
+                </button>
+            </form>
+
+            <div class="register" fxLayout="column" fxLayoutAlign="center center">
+                <span class="text">Already have an account? <a class="link" [routerLink]="'/authentication/login'">Login</a></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+

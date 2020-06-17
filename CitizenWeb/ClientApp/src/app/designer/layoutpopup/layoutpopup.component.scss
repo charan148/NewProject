@@ -1,0 +1,230 @@
+/* HIDE RADIO */
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.button {
+    background-color: #627d8e;
+    border-radius: 5px;
+    color: white;
+    padding: .8em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+    cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+    outline: 2px solid #0026ff;
+}
+
+
+.border {
+    padding: 5px;
+    border: 1px solid #ddd;
+    margin: 5px;
+}
+.hcheckbox {
+    .inputGroup {
+        display: inline-block;
+    }
+
+    .inputGroup2 {
+        display: block;
+    }
+
+    .inputGroup, .inputGroup2 {
+        background-color: #fff;
+        margin: 10px 0.5%;
+        position: relative;
+        min-width: 32%;
+
+        label {
+            padding: 16px;
+            width: 100%;
+            display: block;
+            text-align: left;
+            color: #000;
+            border: #ccc 2px solid;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            transition: color 200ms ease-in;
+            overflow: hidden;
+
+            &:before {
+                width: 100%;
+                height: 10px;
+                border-radius: 50%;
+                content: "";
+                border-radius: 5px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%) scale3d(1, 1, 1);
+                transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+                opacity: 0;
+                z-index: -1;
+            }
+
+            &:after {
+                width: 28px;
+                height: 28px;
+                content: "";
+                border: 2px solid #d1d7dc;
+                background-color: #fff;
+                background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 34 34' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+                background-repeat: no-repeat;
+                background-position: 2px 3px;
+                border-radius: 50%;
+                z-index: 2;
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                transition: all 200ms ease-in;
+            }
+        }
+
+        input:checked ~ label {
+            color: #000;
+            border: #00529b 2px solid;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.38);
+            -moz-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.38);
+            box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.38);
+
+            &:before {
+                transform: translate(-50%, -50%) scale3d(56, 56, 1);
+                opacity: 1;
+            }
+
+            &:after {
+                background-color: #00529b;
+                border-color: #00529b;
+                -webkit-box-shadow: 0px 2px 16px 0px rgba(0,82,115,1);
+                -moz-box-shadow: 0px 2px 16px 0px rgba(0,82,115,1);
+                box-shadow: 0px 2px 16px 0px rgba(0,82,115,1);
+            }
+        }
+
+        input {
+            width: 32px;
+            height: 32px;
+            order: 1;
+            z-index: 2;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            visibility: hidden;
+        }
+    }
+}
+
+.inputGroup {
+    display: inline-block;
+}
+
+.inputGroup2 {
+    display: block;
+}
+
+.inputGroup, .inputGroup2 {
+    background-color: #fff;
+    margin: 10px 0.5%;
+    position: relative;
+    min-width: 32%;
+
+    label {
+        padding: 16px;
+        width: 100%;
+        display: block;
+        text-align: left;
+        color: #000;
+        border: #ccc 2px solid;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        transition: color 200ms ease-in;
+        overflow: hidden;
+
+        &:before {
+            width: 100%;
+            height: 10px;
+            border-radius: 50%;
+            content: "";
+            border-radius: 5px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale3d(1, 1, 1);
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            z-index: -1;
+        }
+
+        &:after {
+            width: 28px;
+            height: 28px;
+            content: "";
+            border: 2px solid #d1d7dc;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 34 34' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+            background-repeat: no-repeat;
+            background-position: 2px 3px;
+            border-radius: 50%;
+            z-index: 2;
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: all 200ms ease-in;
+        }
+    }
+
+    input:checked ~ label {
+        color: #000;
+        border: #00529b 2px solid;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.38);
+        -moz-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.38);
+        box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.38);
+
+        &:before {
+            transform: translate(-50%, -50%) scale3d(56, 56, 1);
+            opacity: 1;
+        }
+
+        &:after {
+            background-color: #00529b;
+            border-color: #00529b;
+            -webkit-box-shadow: 0px 2px 16px 0px rgba(0,82,115,1);
+            -moz-box-shadow: 0px 2px 16px 0px rgba(0,82,115,1);
+            box-shadow: 0px 2px 16px 0px rgba(0,82,115,1);
+        }
+    }
+
+    input {
+        width: 32px;
+        height: 32px;
+        order: 1;
+        z-index: 2;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        visibility: hidden;
+    }
+}
+

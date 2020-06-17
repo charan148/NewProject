@@ -1,0 +1,151 @@
+<div mat-dialog-title class="mb-0">
+  <div class="row ml-0 mr-0">
+    <div class="col-12 pl-0 pr-0">
+      <div class="h2 float-left text-white">LOOKUP DETAILS</div>
+      <button [mat-dialog-close]="true" class="float-right btn-link text-white min-auto" cdkFocusInitial><i class="fa fa-times"></i>cancel</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- CONTENT -->
+<div class="content p-16">
+  <div class="row mb-16">
+    <div class="col-md-12">
+        <button mat-mini-fab (click)="saveLookUpDetails()" title="Save" [disabled]="!lookupform.valid" *ngIf="!disablepopup"><i class="fa fa-save"></i>Save</button>
+      <!--<button mat-mini-fab (click)="refresh()" title="Refresh" *ngIf="!disable"><i class="fa fa-repeat"></i></button>
+      <button mat-mini-fab (click)="close()" title="Close"><i class="fa fa-times"></i></button>-->
+    </div>
+  </div>
+  <mat-card>
+    <!--<mat-card-header>
+        <mat-card-title>LOOKUP DETAILS</mat-card-title>
+    </mat-card-header>-->
+    <mat-card-content>
+      <form name="form" #lookupform="ngForm">
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field class="w-100-p">
+              <input matInput placeholder="Lookup Details Value" name="lookupDetailsValue" id="lookupDetailsValue" #lookupDetailsValue="ngModel" [disabled]="disablepopup" [(ngModel)]="LookupDetailsobj.lookupDetailsValue" required [ngModelOptions]="{standalone: false}">
+              <mat-error [hidden]="lookupDetailsValue.valid">Lookup Details Value is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-4">
+            <mat-form-field class="w-100-p">
+              <input matInput placeholder="Lookup Details Description" name="lookupDetailsDescription" id="lookupDetailsDescription" #lookupDetailsDescription="ngModel" [disabled]="disablepopup" [(ngModel)]="LookupDetailsobj.lookupDetailsDescription" required [ngModelOptions]="{standalone: false}">
+              <mat-error [hidden]="lookupDetailsDescription.valid">Lookup Details Description is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="w-100-p">
+              <input matInput placeholder="Lookup Details Long Description" name="lookupDetailsLongDescription" id="lookupDetailsLongDescription" #lookupDetailsLongDescription="ngModel" [disabled]="disablepopup" [(ngModel)]="LookupDetailsobj.lookupDetailsLongDescription" [ngModelOptions]="{standalone: true}">
+              <!--<mat-error [hidden]="lookupDetailsLongDescription.valid">Lookup Details Long Description is required</mat-error>-->
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field class="w-100-p">
+              <input matInput placeholder="Lookup Details Category" name="lookupDetailsCategory" id="lookupDetailsCategory" #lookupDetailsCategory="ngModel" [disabled]="disablepopup" [(ngModel)]="LookupDetailsobj.lookupDetailsCategory" [ngModelOptions]="{standalone: true}">
+              <!--<mat-error [hidden]="lookupDetailsCategory.valid">Lookup Details Category is required</mat-error>-->
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="w-100-p">
+              <input matInput placeholder="Lookup Details Type" name="lookupDetailsType" id="lookupDetailsType" #lookupDetailsType="ngModel" [disabled]="disablepopup" [(ngModel)]="LookupDetailsobj.lookupDetailsType" [ngModelOptions]="{standalone: true}">
+              <!--<mat-error [hidden]="lookupDetailsType.valid">Lookup Details Type is required</mat-error>-->
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="w-100-p">
+              <input matInput placeholder="Lookup Details Display Description" name="lookupDisplayDescription" id="lookupDisplayDescription" #lookupDisplayDescription="ngModel" [disabled]="disablepopup" [(ngModel)]="LookupDetailsobj.lookupDetailsDisplayDescription" [ngModelOptions]="{standalone: true}">
+              <!--<mat-error [hidden]="lookupDisplayDescription.valid">Lookup Display Description is required</mat-error>-->
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field class="w-100-p">
+              <input matInput placeholder="Lookup Details Sub Category" name="lookupDetailsSubCategory" id="lookupDetailsSubCategory" #lookupDetailsSubCategory="ngModel" [disabled]="disablepopup" [(ngModel)]="LookupDetailsobj.lookupDetailsSubCategory" [ngModelOptions]="{standalone: true}">
+              <!--<mat-error [hidden]="lookupDetailsSubCategory.valid">Lookup Details SubCategory is required</mat-error>-->
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="w-100-p">
+              <input matInput placeholder="Lookup Details Cross Walk Value" name="lookupDetailsCrossWalkValue" id="lookupDetailsCrossWalkValue" #lookupDetailsCrossWalkValue="ngModel" [disabled]="disablepopup" [(ngModel)]="LookupDetailsobj.lookupDetailsCrossWalkValue" [ngModelOptions]="{standalone: true}">
+              <!--<mat-error [hidden]="lookupDetailsCrossWalkValue.valid">Lookup Details Cross Walk Value is required</mat-error>-->
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="w-100-p">
+              <input matInput placeholder="Lookup Details Short Description" name="lookupDetailsShortDescription" id="lookupDetailsShortDescription" #lookupDetailsShortDescription="ngModel" [disabled]="disablepopup" [(ngModel)]="LookupDetailsobj.lookupDetailsShortDescription" [ngModelOptions]="{standalone: true}">
+              <!--<mat-error [hidden]="lookupDetailsShortDescription.valid">Lookup Details Short Description is required</mat-error>-->
+            </mat-form-field>
+          </div>
+
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field class="w-100-p">
+              <input matInput [matDatepicker]="pickerfrom" [max]="startminDate" (dateInput)="startDateChange(effectiveFrom.value)" placeholder="Effective From" #effectiveFrom="ngModel" [disabled]="disablepopup" name="effectiveFrom" id="effectiveFrom" [(ngModel)]="LookupDetailsobj.lookupDetailsEffectiveFrom" [ngModelOptions]="{standalone: true}" >
+              <mat-datepicker-toggle matSuffix [for]="pickerfrom"></mat-datepicker-toggle>
+              <mat-datepicker #pickerfrom></mat-datepicker>
+              <!--<mat-error [hidden]="lookupLongDescription.valid">Effective From is required</mat-error>-->
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="w-100-p">
+              <input matInput [matDatepicker]="picker" placeholder="Effective To" [min]="endmaxDate" (dateInput)="endDateChange(effectiveTo.value)" #effectiveTo="ngModel" [disabled]="disablepopup" name="effectiveTo" id="effectiveTo" [(ngModel)]="LookupDetailsobj.lookupDetailsEffectiveTo" [ngModelOptions]="{standalone: true}">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <!--<mat-error [hidden]="lookupLongDescription.valid">Effective To is required</mat-error>-->
+            </mat-form-field>
+          </div>
+          <!--<div class="col-md-4">
+    <mat-form-field class="w-100-p">
+      <input matInput placeholder="Row Status" #rowStatus="ngModel" name="rowStatus" id="rowStatus" [(ngModel)]="LookupDetailsobj.rowStatus" [ngModelOptions]="{standalone: true}" [disabled]="disable" />
+    </mat-form-field>
+  </div>-->
+
+          <div class="col-md-4">
+            <mat-form-field class="w-100-p">
+              <mat-label>Status</mat-label>
+              <mat-select class="w-100-p cstmslctpdng" #rowStatus="ngModel" [disabled]="disablepopup" [(ngModel)]="LookupDetailsobj.rowStatus" name="rowStatus" [ngModelOptions]="{standalone: true}">
+                <mat-option *ngFor="let status of StatusList" [value]="status.value">
+                  {{status.value}}
+                </mat-option>
+              </mat-select>
+              <mat-error></mat-error>
+            </mat-form-field>
+          </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field class="w-100-p">
+                    <input matInput placeholder="Lookup Details Sub Type" name="lookupDetailsSubType" id="lookupDetailsSubType" #lookupDetailsSubType="ngModel" [disabled]="disablepopup" [(ngModel)]="LookupDetailsobj.LookupDetailsSubType" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field class="w-100-p">
+                    <input matInput placeholder="Lookup Details Seq Order" name="lookupDetailsSeqOrder" id="lookupDetailsSeqOrder" #lookupDetailsSeqOrder="ngModel" [disabled]="disablepopup" [(ngModel)]="LookupDetailsobj.lookupDetailsSequenceOrder" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-checkbox [(ngModel)]="LookupDetailsobj.isUsedInDisplay" [disabled]="disablepopup" [ngModelOptions]="{standalone: true}">Is Used In Display?</mat-checkbox>
+            </div>
+
+
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+

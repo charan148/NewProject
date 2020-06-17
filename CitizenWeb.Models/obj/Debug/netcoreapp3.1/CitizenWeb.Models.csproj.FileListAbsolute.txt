@@ -1,0 +1,119 @@
+E:\EPIC\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+E:\EPIC\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+E:\EPIC\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+E:\EPIC\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+E:\EPIC\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+E:\EPIC\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+E:\EPIC\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csprojAssemblyReference.cache
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csproj.CoreCompileInputs.cache
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\CitizenwebLatest\CitizenWeb05202020\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csproj.CoreCompileInputs.cache
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+F:\CTWB\CitizenWeb\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\Latest solution\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+D:\Latest solution\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\Latest solution\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\Latest solution\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csprojAssemblyReference.cache
+D:\Latest solution\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csproj.CoreCompileInputs.cache
+D:\Latest solution\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+D:\Latest solution\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+D:\Latest solution\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\Latest solution\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+C:\citizen_update@26\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+C:\citizen_update@26\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+C:\citizen_update@26\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+C:\citizen_update@26\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+C:\citizen_update@26\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+C:\citizen_update@26\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+C:\citizen_update@26\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+F:\CTWB\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+F:\CTWB\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+F:\CTWB\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+F:\CTWB\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+F:\CTWB\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+F:\CTWB\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csproj.CoreCompileInputs.cache
+F:\CTWB\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+F:\CTWB\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+F:\CTWB\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csprojAssemblyReference.cache
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csprojAssemblyReference.cache
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+E:\EPIC\CitizenWeb_New\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csprojAssemblyReference.cache
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+C:\Users\EPTCH-DESKTOP-11\Downloads\CitizenWeb (4)\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csprojAssemblyReference.cache
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\citizen web 02-06\CitizenWeb\CitizenWeb\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+C:\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+C:\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+C:\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+C:\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+C:\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+C:\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+C:\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csprojAssemblyReference.cache
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+C:\Users\user2\Downloads\citizen\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\Citizen Web\Citizen Web 0906\citizen\citizen\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csprojAssemblyReference.cache
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\share folder\Citizen Web Master\Citizen Web\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csprojAssemblyReference.cache
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+D:\Citizen Web\Citizen Web 0906\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+F:\CitizenWebNewSolution\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.deps.json
+F:\CitizenWebNewSolution\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+F:\CitizenWebNewSolution\citizen\CitizenWeb.Models\bin\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
+F:\CitizenWebNewSolution\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.csprojAssemblyReference.cache
+F:\CitizenWebNewSolution\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfoInputs.cache
+F:\CitizenWebNewSolution\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.AssemblyInfo.cs
+F:\CitizenWebNewSolution\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.dll
+F:\CitizenWebNewSolution\citizen\CitizenWeb.Models\obj\Debug\netcoreapp3.1\CitizenWeb.Models.pdb
