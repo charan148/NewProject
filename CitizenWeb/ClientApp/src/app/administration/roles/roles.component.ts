@@ -133,6 +133,7 @@ export class RolesComponent implements OnInit {
    //  Delete Role
     deleteRole(): void {
         let roleids = '';
+        console.log(roleids);
         if (this.selection.selected.length == 0) {
             this.showError(this.appConstants.COMM_ATLEAST_SINGLE_RECORD);
         } else {
