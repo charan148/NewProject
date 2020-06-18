@@ -80,6 +80,7 @@ export class RolesComponent implements OnInit {
                 }
 
                 const roles = this.RolesList;
+                console.log(roles);
                 this.dataSource = new MatTableDataSource(roles);
                 this.dataSource.paginator = this.paginator;
                 this.dataSource.sort = this.sort;
