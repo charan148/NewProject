@@ -73,6 +73,7 @@ export class RolesComponent implements OnInit {
         this.administrationservice.GetAllRoles().subscribe(
             (data) => {
                 var roledata = data;
+                console.log(roledata);
                 for (var i = 0; i < roledata.length; i++) {
                     if (roledata[i].isActive == true) {
                         this.RolesList.push(roledata[i]);
